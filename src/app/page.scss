@@ -1,0 +1,42 @@
+.section {
+  align-items: center;
+}
+.home {
+}
+.about {
+  display: flex;
+  gap: 1rem;
+  > .left {
+    height: 20rem;
+    flex: 1;
+    align-self: flex-start;
+    // overflow: hidden;
+    > .profile-img-outer {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid;
+      // border: 2px solid coral;
+      // transition: opacity 3s;
+    }
+  }
+  > .right {
+    border: 2px solid;
+    flex: 2;
+  }
+}
+.works {
+  > ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    > li {
+      width: 15rem;
+      height: 15rem;
+      border: 2px solid;
+      padding: 1rem;
+    }
+  }
+}
