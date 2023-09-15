@@ -10,7 +10,7 @@ export default function Header() {
   // MotionValueEvent가 scrollY의 값을 트랙킹(추적)한다.
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
-    console.log({ previous, latest });
+    // console.log({ previous, latest });
     // scroll down : previous < latest
     if (previous < latest && 100 < latest) setHidden(true);
     // scroll up : previous > latest
