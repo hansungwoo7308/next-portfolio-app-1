@@ -1,14 +1,16 @@
 "use client";
 // import styles from "./page.module.scss";
 import "@/app/page.scss";
-import { useAnimation, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { AnimatePresence, Variants, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { transform } from "typescript";
+import Test from "@/components/Test";
 // import "../../test/test.scss";
 // import "@/styles/test.scss";
 
 export default function Home() {
+  // intersection (hook)
   const ref: any = useRef(null);
   const isInView = useInView(ref);
   console.log({ isInView });
@@ -18,6 +20,33 @@ export default function Home() {
     transition: "all 1s",
     // transform: isInView ? "none" : "translateX(-200px)",
   };
+
+  // intersection (inline)
+  const somethingVariants: Variants = {
+    offscreen: { y: 30, opacity: 0 },
+    onscreen: { y: 0, opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
+  };
+
+  // selected animation
+  const [selectedId, setSelectedId] = useState(null);
+  const items = [
+    {
+      id: "cat",
+      subtitle: "subtitle",
+      title: "title",
+    },
+    {
+      id: "bird",
+      subtitle: "subtitle",
+      title: "title",
+    },
+    {
+      id: "fish",
+      subtitle: "subtitle",
+      title: "title",
+    },
+  ];
+
   // const isInView = useInView(ref, { amount: 1 });
   // useEffect(() => {
   //   const observer = new IntersectionObserver(
@@ -40,7 +69,7 @@ export default function Home() {
     <main>
       <section style={{ display: "none" }}>
         <p>library : Framer-Motion</p>
-        <ol>
+        {/* <ol>
           <li>Page Transition</li>
           <li>Animation : opacity, transform, scale, scroll</li>
           <li>scale : zoom in, zoom out</li>
@@ -49,7 +78,7 @@ export default function Home() {
           <li>Add Videos</li>
           <li>Parallax</li>
           <li>Theme (Dark and Bright mode)</li>
-        </ol>
+        </ol> */}
       </section>
       <section id="home" className="home">
         <div>
@@ -68,7 +97,32 @@ export default function Home() {
         </div>
       </section>
       <section id="about" className="about">
-        <div className="left">
+        <motion.div
+          className="left"
+          variants={somethingVariants}
+          initial="offscreen"
+          whileInView="onscreen"
+          // transition={{ duration: 1 }}
+        >
+          <div className="profile-img-outer">
+            <img src="/images/profile.jpg" alt="profile" />
+          </div>
+        </motion.div>
+        <motion.div
+          className="right"
+          variants={somethingVariants}
+          initial="offscreen"
+          whileInView="onscreen"
+          // transition={{ duration: 1 }}
+        >
+          <h1>About</h1>
+          <p>
+            Hello, I'm sungwoo, Han. Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+            ullam labore pariatur repudiandae? Nihil repellat deserunt vel molestiae veritatis culpa
+            quia, mollitia quae iusto! Quasi qui unde vero fugiat architecto.
+          </p>
+        </motion.div>
+        {/* <div className="left">
           <div className="profile-img-outer" ref={ref} style={animation}>
             <img src="/images/profile.jpg" alt="profile" />
           </div>
@@ -80,11 +134,21 @@ export default function Home() {
             ullam labore pariatur repudiandae? Nihil repellat deserunt vel molestiae veritatis culpa
             quia, mollitia quae iusto! Quasi qui unde vero fugiat architecto.
           </p>
-        </div>
+        </div> */}
+        <motion.p
+          variants={somethingVariants}
+          initial="offscreen"
+          whileInView="onscreen"
+          // initial={{ opacity: 0 }}
+          // whileInView={{ opacity: 1 }}
+          // transition={{ duration: 3 }}
+        >
+          something
+        </motion.p>
       </section>
       <section id="works" className="works">
         <h1>Works</h1>
-        <p>link to detail pages</p>
+        {/* <p>link to detail pages</p>
         <ul>
           <li>
             <div>
@@ -100,9 +164,36 @@ export default function Home() {
           <li></li>
           <li></li>
           <li></li>
-        </ul>
+        </ul> */}
+
+        <div>
+          {items.map((item: any, index: any) => (
+            <motion.div
+              key={index}
+              className="animal"
+              layoutId={item.id}
+              onClick={() => setSelectedId(item.id)}
+            >
+              <motion.h5>{item.subtitle}</motion.h5>
+              <motion.h2>{item.title}</motion.h2>
+            </motion.div>
+          ))}
+
+          <AnimatePresence>
+            {selectedId && (
+              <motion.div className="animal-zoom-in" layoutId={selectedId}>
+                <motion.h5>test</motion.h5>
+                <motion.h2>test</motion.h2>
+                <motion.button onClick={() => setSelectedId(null)} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </section>
       <section id="contact" className="contact"></section>
+      <section id="test">
+        <Test />
+      </section>
     </main>
   );
 }

@@ -20,6 +20,7 @@ export default function Header() {
           <Link href={"/#about"}>About</Link>
           <Link href={"/#works"}>Works</Link>
           <Link href={"/#contact"}>Contact</Link>
+          <Link href={"/#test"}>Test</Link>
         </motion.nav>
       </section>
     </header>
