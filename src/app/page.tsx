@@ -1,32 +1,34 @@
 "use client";
-// import styles from "./page.module.scss";
 import "@/app/page.scss";
-import { AnimatePresence, Variants, useAnimation, useInView } from "framer-motion";
+import {
+  AnimatePresence,
+  Variants,
+  m,
+  useAnimation,
+  useInView,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { transform } from "typescript";
 import Test from "@/components/Test";
-// import "../../test/test.scss";
-// import "@/styles/test.scss";
-
 export default function Home() {
   // intersection (hook)
   const ref: any = useRef(null);
   const isInView = useInView(ref);
-  console.log({ isInView });
+  // console.log({ isInView });
   const animation = {
     opacity: isInView ? "1" : "0",
     transform: isInView ? "none" : "translateY(30px)",
     transition: "all 1s",
     // transform: isInView ? "none" : "translateX(-200px)",
   };
-
   // intersection (inline)
   const somethingVariants: Variants = {
     offscreen: { y: 30, opacity: 0 },
     onscreen: { y: 0, opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
   };
-
   // selected animation
   const [selectedId, setSelectedId] = useState(null);
   const items = [
@@ -46,6 +48,37 @@ export default function Home() {
       title: "title",
     },
   ];
+
+  // performance (horizonal scroll)
+  const performanceRef: any = useRef(null);
+  // const stickerRef: any = useRef(null);
+  // useEffect(() => {
+  //   const performance: HTMLElement = performanceRef.current;
+  //   const sticker: HTMLElement = stickerRef.current;
+  //   window.addEventListener("scroll", () => {
+  //     const top = performance.getBoundingClientRect().top;
+  //     const bottom = performance.getBoundingClientRect().bottom;
+  //     console.log({ top, bottom });
+  //     // console.log("scroll");
+  //     if (top <= 0 && bottom > 0) {
+  //       // sticker.style.position = "sticky";
+  //       // sticker.style.top = "5rem";
+  //     } else {
+  //       // sticker.style.position = "block";
+  //     }
+  //   });
+  // }, []);
+  const horizonRef: any = useRef(null);
+  // const { scrollYProgress: scrollYProgressByPerformance } = useScroll({
+  //   target: performanceRef,
+  //   offset: ["start start", "end end"],
+  // });
+  const { scrollYProgress } = useScroll({
+    target: performanceRef,
+    offset: ["start start", "end end"],
+  });
+  const x = useTransform(scrollYProgress, [0, 1], ["150%", "-150%"]);
+  // const x = useTransform(scrollYProgress, [0, 1], ["150%", "-150%"]);
 
   // const isInView = useInView(ref, { amount: 1 });
   // useEffect(() => {
@@ -90,13 +123,29 @@ export default function Home() {
               iusto! Quasi qui unde vero fugiat architecto.
             </p>
             <p>
-              <p>다음의 방식을 추구</p>
-              <p>군더더기 없는 디자인</p>
-              <p>명확한 방식</p>
+              다음의 방식을 추구
+              <br />
+              가능한 군더더기 없는 디자인
+              <br />
+              명확한 표현 방식
             </p>
             <button>something</button>
           </div>
         </div>
+      </section>
+      <section className="performance" ref={performanceRef}>
+        {/* <div
+          className="sticker"
+          // ref={stickerRef}
+        >
+          <h1>performance</h1>
+        </div> */}
+        <motion.div className="horizon" ref={horizonRef} style={{ x }}>
+          <div className="box">1</div>
+          <div className="box">2</div>
+          <div className="box">3</div>
+          <div className="box">4</div>
+        </motion.div>
       </section>
       <section id="about" className="about">
         <motion.div
@@ -137,7 +186,7 @@ export default function Home() {
             quia, mollitia quae iusto! Quasi qui unde vero fugiat architecto.
           </p>
         </div> */}
-        <motion.p
+        {/* <motion.p
           variants={somethingVariants}
           initial="offscreen"
           whileInView="onscreen"
@@ -146,7 +195,7 @@ export default function Home() {
           // transition={{ duration: 3 }}
         >
           something
-        </motion.p>
+        </motion.p> */}
       </section>
       <section id="works" className="works">
         <h1>Works</h1>
