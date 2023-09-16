@@ -81,19 +81,21 @@ export default function Home() {
         </ol> */}
       </section>
       <section id="home" className="home">
-        <div>
-          <div>
-            {/* <img src="/images/profile.jpg" alt="profile" /> */}
-            <h1>image</h1>
+        <div className="wrapper">
+          <div className="left">
+            <h1>Youser Stack</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. At ullam labore pariatur
+              repudiandae? Nihil repellat deserunt vel molestiae veritatis culpa quia, mollitia quae
+              iusto! Quasi qui unde vero fugiat architecto.
+            </p>
+            <p>
+              <p>다음의 방식을 추구</p>
+              <p>군더더기 없는 디자인</p>
+              <p>명확한 방식</p>
+            </p>
+            <button>something</button>
           </div>
-        </div>
-        <div>
-          <h1>Welcome to My Web</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. At ullam labore pariatur
-            repudiandae? Nihil repellat deserunt vel molestiae veritatis culpa quia, mollitia quae
-            iusto! Quasi qui unde vero fugiat architecto.
-          </p>
         </div>
       </section>
       <section id="about" className="about">
