@@ -77,7 +77,7 @@ export default function Home() {
     target: performanceRef,
     offset: ["start start", "end end"],
   });
-  const x = useTransform(scrollYProgress, [0, 1], ["150%", "-150%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["200%", "-200%"]);
   // const x = useTransform(scrollYProgress, [0, 1], ["150%", "-150%"]);
 
   // const isInView = useInView(ref, { amount: 1 });
@@ -143,13 +143,29 @@ export default function Home() {
         <motion.div
           className="horizon"
           ref={horizonRef}
-          style={{ x, translateY: "-50%" }}
-          // initial={{ transform: "translateY(-50%)" }}
+          style={{
+            position: "sticky",
+            top: "50%",
+            translateY: "-50%",
+
+            x,
+          }}
         >
-          <div className="box">1</div>
-          <div className="box">2</div>
-          <div className="box">3</div>
-          <div className="box">4</div>
+          <div className="box">
+            <img src="/images/street-01.jpg" alt="alt" />
+          </div>
+          <div className="box">
+            <img src="/images/street-02.jpg" alt="alt" />
+          </div>
+          <div className="box">
+            <img src="/images/street-03.jpg" alt="alt" />
+          </div>
+          <div className="box">
+            <img src="/images/street-04.jpg" alt="alt" />
+          </div>
+          <div className="box">
+            <img src="/images/street-05.jpg" alt="alt" />
+          </div>
         </motion.div>
       </section>
       <section id="about" className="about">

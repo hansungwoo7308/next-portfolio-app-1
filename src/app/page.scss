@@ -32,7 +32,9 @@
 }
 .performance {
   height: 500vh;
-  border-color: hotpink;
+  // border-color: hotpink;
+  padding-bottom: 100vh;
+
   // padding: 0;
   .sticker {
     // position: sticky;
@@ -44,21 +46,29 @@
     // background-color: #333;
   }
   .horizon {
-    width: 200vw;
-    height: 20rem;
-    position: sticky;
-    top: 50%;
+    // position: sticky;
+    // position: -webkit-sticky;
+    // top: 50%;
     // transform: translateY(-50%);
-    border: 2px solid coral;
+    width: 200vw;
+    height: 30rem;
+    // border: 2px solid coral;
     display: flex;
-    gap: 1rem;
+    gap: 5rem;
     padding: 1rem;
     .box {
       width: 100%;
       height: 100%;
-      border: 2px solid green;
+      // border: 2px solid green;
     }
   }
+  // @supports (position: sticky) {
+  //   .horizon {
+  //     position: -webkit-sticky;
+  //     top: 50%;
+  //     transform: translateY(-50%);
+  //   }
+  // }
 }
 .about {
   display: flex;
