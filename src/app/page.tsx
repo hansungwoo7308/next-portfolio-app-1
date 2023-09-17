@@ -157,13 +157,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="performance" ref={performanceRef}>
-        {/* <div
-          className="sticker"
-          // ref={stickerRef}
-        >
-          <h1>performance</h1>
-        </div> */}
+      {/* <section className="performance" ref={performanceRef}>
         <motion.div
           className="horizon"
           ref={horizonRef}
@@ -190,7 +184,7 @@ export default function Home() {
             <Image src="/images/street-05.jpg" alt="alt" width={500} height={500} />
           </div>
         </motion.div>
-      </section>
+      </section> */}
       <section id="about" className="about">
         <div className="top">
           <motion.div
@@ -284,6 +278,7 @@ export default function Home() {
         </ul> */}
         <h1>selectedId : {selectedId}</h1>
         <div>
+          {/* <AnimatePresence></AnimatePresence> */}
           {items.map((item: any, index: any) => (
             <motion.div
               key={item.id}
@@ -293,6 +288,8 @@ export default function Home() {
                 e.stopPropagation();
                 setSelectedId(item.id);
               }}
+              // exit={{ opacity: 0 }}
+              // transition={{ duration: 5 }}
             >
               <motion.h1>{item.id}</motion.h1>
               <motion.p>{item.title}</motion.p>
@@ -306,6 +303,7 @@ export default function Home() {
                 layoutId={selectedId}
                 onClick={(e) => e.stopPropagation()}
                 exit={{ opacity: 0 }}
+                // transition={{ duration: 5 }}
               >
                 <motion.h1>{selectedItem?.id}</motion.h1>
                 <motion.p>{selectedItem?.title}</motion.p>
