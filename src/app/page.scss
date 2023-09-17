@@ -35,19 +35,20 @@
   border-color: hotpink;
   // padding: 0;
   .sticker {
-    position: sticky;
-    top: 50vh;
-    transform: translateY(-50%);
+    // position: sticky;
+    // top: 50vh;
+    // transform: translateY(-50%);
     // height: 100%;
     // padding: 5rem;
-    padding-top: 300px;
-    background-color: #333;
+    // padding-top: 300px;
+    // background-color: #333;
   }
   .horizon {
     width: 200vw;
     height: 20rem;
     position: sticky;
-    top: 5rem;
+    top: 50%;
+    // transform: translateY(-50%);
     border: 2px solid coral;
     display: flex;
     gap: 1rem;

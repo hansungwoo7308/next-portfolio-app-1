@@ -140,7 +140,12 @@ export default function Home() {
         >
           <h1>performance</h1>
         </div> */}
-        <motion.div className="horizon" ref={horizonRef} style={{ x }}>
+        <motion.div
+          className="horizon"
+          ref={horizonRef}
+          style={{ x, translateY: "-50%" }}
+          // initial={{ transform: "translateY(-50%)" }}
+        >
           <div className="box">1</div>
           <div className="box">2</div>
           <div className="box">3</div>
