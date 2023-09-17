@@ -14,6 +14,17 @@ import { motion } from "framer-motion";
 import { transform } from "typescript";
 import Test from "@/components/Test";
 import Image from "next/image";
+import { SocialIcon } from "react-social-icons";
+import {
+  SiCss3,
+  SiHtml5,
+  SiJavascript,
+  SiMongodb,
+  SiNextdotjs,
+  SiReact,
+  SiSass,
+  SiStyledcomponents,
+} from "react-icons/si";
 export default function Home() {
   // intersection (hook)
   const ref: any = useRef(null);
@@ -32,6 +43,8 @@ export default function Home() {
   };
   // selected animation
   const [selectedId, setSelectedId] = useState(null);
+  // const [itemsIndex,setItemsIndex]=useState()
+  const [selectedItem, setSelectedItem]: any = useState({});
   const items = [
     {
       id: "cat",
@@ -49,6 +62,16 @@ export default function Home() {
       title: "title",
     },
   ];
+  useEffect(() => {
+    const foundItem = items.find((item: any, index: any) => item.id === selectedId);
+    setSelectedItem(foundItem);
+    // console.log({ foundItem });
+  }, [selectedId]);
+  useEffect(() => {
+    const handleClick = () => setSelectedId(null);
+    if (!selectedId) window.addEventListener("click", handleClick);
+    // return document.removeEventListener(handleClick)
+  }, []);
 
   // performance (horizonal scroll)
   const performanceRef: any = useRef(null);
@@ -169,31 +192,53 @@ export default function Home() {
         </motion.div>
       </section>
       <section id="about" className="about">
-        <motion.div
-          className="left"
-          variants={somethingVariants}
-          initial="offscreen"
-          whileInView="onscreen"
-          // transition={{ duration: 1 }}
-        >
-          <div className="profile-img-outer">
-            <img src="/images/profile.jpg" alt="profile" />
-          </div>
-        </motion.div>
-        <motion.div
-          className="right"
-          variants={somethingVariants}
-          initial="offscreen"
-          whileInView="onscreen"
-          // transition={{ duration: 1 }}
-        >
-          <h1>About</h1>
-          <p>
-            Hello, I'm sungwoo, Han. Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-            ullam labore pariatur repudiandae? Nihil repellat deserunt vel molestiae veritatis culpa
-            quia, mollitia quae iusto! Quasi qui unde vero fugiat architecto.
-          </p>
-        </motion.div>
+        <div className="top">
+          <motion.div
+            className="left"
+            variants={somethingVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            // transition={{ duration: 1 }}
+          >
+            <div className="profile-img-outer">
+              <img src="/images/profile.jpg" alt="profile" />
+            </div>
+          </motion.div>
+          <motion.div
+            className="right"
+            variants={somethingVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+            // transition={{ duration: 1 }}
+          >
+            <h1>About</h1>
+            <p>
+              Hello, I'm sungwoo, Han. Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+              ullam labore pariatur repudiandae? Nihil repellat deserunt vel molestiae veritatis
+              culpa quia, mollitia quae iusto! Quasi qui unde vero fugiat architecto.
+            </p>
+          </motion.div>
+        </div>
+        <div className="middle">
+          <motion.div
+            className="stack"
+            variants={somethingVariants}
+            initial="offscreen"
+            whileInView="onscreen"
+          >
+            <h3 className="title">Stack</h3>
+            <ul>
+              <SiJavascript size="5rem" />
+              <SiReact size="5rem" />
+              <SiNextdotjs size="5rem" />
+              <SiMongodb size="5rem" />
+              <SiStyledcomponents size="5rem" />
+              <SiSass size="5rem" />
+              <SiHtml5 size="5rem" />
+              <SiCss3 size="5rem" />
+            </ul>
+          </motion.div>
+        </div>
         {/* <div className="left">
           <div className="profile-img-outer" ref={ref} style={animation}>
             <img src="/images/profile.jpg" alt="profile" />
@@ -237,26 +282,34 @@ export default function Home() {
           <li></li>
           <li></li>
         </ul> */}
-
+        <h1>selectedId : {selectedId}</h1>
         <div>
           {items.map((item: any, index: any) => (
             <motion.div
-              key={index}
+              key={item.id}
               className="animal"
               layoutId={item.id}
-              onClick={() => setSelectedId(item.id)}
+              onClick={(e: any) => {
+                e.stopPropagation();
+                setSelectedId(item.id);
+              }}
             >
-              <motion.h5>{item.subtitle}</motion.h5>
-              <motion.h2>{item.title}</motion.h2>
+              <motion.h1>{item.id}</motion.h1>
+              <motion.p>{item.title}</motion.p>
             </motion.div>
           ))}
-
           <AnimatePresence>
             {selectedId && (
-              <motion.div className="animal-zoom-in" layoutId={selectedId}>
-                <motion.h5>test</motion.h5>
-                <motion.h2>test</motion.h2>
-                <motion.button onClick={() => setSelectedId(null)} />
+              <motion.div
+                key={selectedId}
+                className="animal-zoom-in"
+                layoutId={selectedId}
+                onClick={(e) => e.stopPropagation()}
+                exit={{ opacity: 0 }}
+              >
+                <motion.h1>{selectedItem?.id}</motion.h1>
+                <motion.p>{selectedItem?.title}</motion.p>
+                <motion.button onClick={(e: any) => setSelectedId(null)} />
               </motion.div>
             )}
           </AnimatePresence>
@@ -266,6 +319,12 @@ export default function Home() {
       <section id="test">
         <Test />
       </section>
+      {/* <li>
+              <SocialIcon url="www.facebook.com" bgColor="transparent" />
+            </li>
+            <li>
+              <SocialIcon url="www.github.com" bgColor="transparent" />
+            </li> */}
     </main>
   );
 }
