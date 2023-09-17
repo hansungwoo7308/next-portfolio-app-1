@@ -13,6 +13,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { transform } from "typescript";
 import Test from "@/components/Test";
+import Image from "next/image";
 export default function Home() {
   // intersection (hook)
   const ref: any = useRef(null);
@@ -147,24 +148,23 @@ export default function Home() {
             position: "sticky",
             top: "50%",
             translateY: "-50%",
-
             x,
           }}
         >
           <div className="box">
-            <img src="/images/street-01.jpg" alt="alt" />
+            <Image src="/images/street-01.jpg" alt="alt" width={500} height={500} />
           </div>
           <div className="box">
-            <img src="/images/street-02.jpg" alt="alt" />
+            <Image src="/images/street-02.jpg" alt="alt" width={500} height={500} />
           </div>
           <div className="box">
-            <img src="/images/street-03.jpg" alt="alt" />
+            <Image src="/images/street-03.jpg" alt="alt" width={500} height={500} />
           </div>
           <div className="box">
-            <img src="/images/street-04.jpg" alt="alt" />
+            <Image src="/images/street-04.jpg" alt="alt" width={500} height={500} />
           </div>
           <div className="box">
-            <img src="/images/street-05.jpg" alt="alt" />
+            <Image src="/images/street-05.jpg" alt="alt" width={500} height={500} />
           </div>
         </motion.div>
       </section>
