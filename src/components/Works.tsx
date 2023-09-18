@@ -8,19 +8,19 @@ export default function Works() {
   const [selectedItem, setSelectedItem]: any = useState({});
   const items = [
     {
-      id: "cat",
-      subtitle: "subtitle",
-      title: "title",
+      id: "E-commerce Next App",
+      title: "E-commerce Next App",
+      stack: ["nextjs", "styled-components", "mongodb", "typescript"],
     },
     {
-      id: "bird",
-      subtitle: "subtitle",
-      title: "title",
+      id: "Portfolio",
+      title: "Portfolio",
+      stack: ["nextjs", "scss", "framer-motion", "typescript"],
     },
     {
-      id: "fish",
-      subtitle: "subtitle",
-      title: "title",
+      id: "Next App",
+      title: "Next App",
+      stack: ["nextjs", "typescript"],
     },
   ];
   useEffect(() => {
@@ -28,6 +28,9 @@ export default function Works() {
     setSelectedItem(foundItem);
     // console.log({ foundItem });
   }, [selectedId]);
+  useEffect(() => {
+    console.log({ selectedItem });
+  }, [selectedItem]);
   // useEffect(() => {
   //   const handleClick = () => setSelectedId(null);
   //   if (!selectedId) window.addEventListener("click", handleClick);
@@ -47,11 +50,12 @@ export default function Works() {
             // exit={{ opacity: 0 }}
             // transition={{ duration: 10 }}
           >
-            <motion.div className="img-wrapper">
+            <div className="img-wrapper">
               <Image src={"/images/town.jpg"} alt="alt" width={300} height={300} />
-            </motion.div>
-            <motion.h1>{item.id}</motion.h1>
-            <motion.p>{item.title}</motion.p>
+            </div>
+            <div className="content">
+              <h3>{item.title}</h3>
+            </div>
             {/* <motion.h1 layoutId={item.id + "h1"}>{item.id}</motion.h1>
             <motion.p layoutId={item.id + "p"}>{item.title}</motion.p> */}
             {/* <motion.button
@@ -77,12 +81,16 @@ export default function Works() {
               onClick={(e) => e.stopPropagation()}
               // transition={{ duration: 10 }}
             >
-              <motion.div className="img-wrapper">
+              <div className="img-wrapper">
                 <Image src={"/images/town.jpg"} alt="alt" width={700} height={700} />
-              </motion.div>
-              <div className="">
-                <motion.h1>{selectedItem?.id}</motion.h1>
-                <motion.p>{selectedItem?.title}</motion.p>
+              </div>
+              <div className="content">
+                <h3>{selectedItem?.title}</h3>
+                <ul>
+                  {selectedItem?.stack.map((v: any) => (
+                    <li>{v}</li>
+                  ))}
+                </ul>
                 {/* <motion.h1 layoutId={selectedId + "h1"}>{selectedItem?.id}</motion.h1>
                 <motion.p layoutId={selectedId + "p"}>{selectedItem?.title}</motion.p> */}
               </div>
