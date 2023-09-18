@@ -35,23 +35,32 @@ export default function Works() {
   return (
     <>
       <h1>Works</h1>
-      <h1>selectedId : {selectedId}</h1>
+      {/* <h1>selectedId : {selectedId}</h1> */}
       <div>
         {items.map((item: any, index: any) => (
           <motion.div
-            // key={item.id}
+            key={item.id}
             // className={`item ${item.id === selectedId ? "opened-item" : ""}`}
             className="item"
             layoutId={item.id}
-            onClick={(e: any) => {
-              // e.stopPropagation();
-              setSelectedId(item.id);
-            }}
-
-            // transition={{ duration: 5 }}
+            onClick={(e: any) => setSelectedId(item.id)}
+            // exit={{ opacity: 0 }}
+            // transition={{ duration: 10 }}
           >
             <motion.h1 layoutId={item.id + "h1"}>{item.id}</motion.h1>
             <motion.p layoutId={item.id + "p"}>{item.title}</motion.p>
+            {/* <motion.h1
+              layoutId={item.id + "h1"}
+              // transition={{ duration: 700 }}
+            >
+              {item.id}
+            </motion.h1>
+            <motion.p layoutId={item.id + "p"}>{item.title}</motion.p> */}
+            {/* <motion.button
+              onClick={(e: any) => setSelectedId(null)}
+              layoutId={item.id + "button"}
+              initial={{ opacity: 0 }}
+            /> */}
           </motion.div>
         ))}
         <div
@@ -63,19 +72,25 @@ export default function Works() {
             {selectedId && (
               <motion.div
                 className="opened-item"
-                // key={selectedId}
                 layoutId={selectedId}
                 exit={{ opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                // transition={{ duration: 5 }}
                 initial={{ translate: "-50% -50%" }}
+                // transition={{ duration: 10 }}
               >
                 <motion.h1 layoutId={selectedId + "h1"}>{selectedItem?.id}</motion.h1>
+                <motion.p layoutId={selectedId + "p"}>{selectedItem?.title}</motion.p>
+                {/* <motion.button onClick={(e: any) => setSelectedId(null)} /> */}
+                {/* <motion.h1 layoutId={selectedId + "h1"}>{selectedItem?.id}</motion.h1>
                 <motion.p layoutId={selectedId + "p"}>{selectedItem?.title}</motion.p>
                 <motion.button
                   onClick={(e: any) => setSelectedId(null)}
                   layoutId={selectedId + "button"}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  // exit={{ opacity: 0 }}
                 />
+                <p>test...</p> */}
               </motion.div>
             )}
           </AnimatePresence>
