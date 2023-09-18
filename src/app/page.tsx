@@ -25,6 +25,7 @@ import {
   SiSass,
   SiStyledcomponents,
 } from "react-icons/si";
+import Works from "@/components/Works";
 export default function Home() {
   // intersection (hook)
   const ref: any = useRef(null);
@@ -41,37 +42,6 @@ export default function Home() {
     offscreen: { y: 30, opacity: 0 },
     onscreen: { y: 0, opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
   };
-  // selected animation
-  const [selectedId, setSelectedId] = useState(null);
-  // const [itemsIndex,setItemsIndex]=useState()
-  const [selectedItem, setSelectedItem]: any = useState({});
-  const items = [
-    {
-      id: "cat",
-      subtitle: "subtitle",
-      title: "title",
-    },
-    {
-      id: "bird",
-      subtitle: "subtitle",
-      title: "title",
-    },
-    {
-      id: "fish",
-      subtitle: "subtitle",
-      title: "title",
-    },
-  ];
-  useEffect(() => {
-    const foundItem = items.find((item: any, index: any) => item.id === selectedId);
-    setSelectedItem(foundItem);
-    // console.log({ foundItem });
-  }, [selectedId]);
-  useEffect(() => {
-    const handleClick = () => setSelectedId(null);
-    if (!selectedId) window.addEventListener("click", handleClick);
-    // return document.removeEventListener(handleClick)
-  }, []);
 
   // performance (horizonal scroll)
   const performanceRef: any = useRef(null);
@@ -258,60 +228,7 @@ export default function Home() {
         </motion.p> */}
       </section>
       <section id="works" className="works">
-        <h1>Works</h1>
-        {/* <p>link to detail pages</p>
-        <ul>
-          <li>
-            <div>
-              <img src="/images/works1" alt="works1" />
-            </div>
-            <div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-            <div>
-              <a href="#">Go to the Web</a>
-            </div>
-          </li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul> */}
-        <h1>selectedId : {selectedId}</h1>
-        <div>
-          {/* <AnimatePresence></AnimatePresence> */}
-          {items.map((item: any, index: any) => (
-            <motion.div
-              key={item.id}
-              className="animal"
-              layoutId={item.id}
-              onClick={(e: any) => {
-                e.stopPropagation();
-                setSelectedId(item.id);
-              }}
-              // exit={{ opacity: 0 }}
-              // transition={{ duration: 5 }}
-            >
-              <motion.h1>{item.id}</motion.h1>
-              <motion.p>{item.title}</motion.p>
-            </motion.div>
-          ))}
-          <AnimatePresence>
-            {selectedId && (
-              <motion.div
-                key={selectedId}
-                className="animal-zoom-in"
-                layoutId={selectedId}
-                onClick={(e) => e.stopPropagation()}
-                exit={{ opacity: 0 }}
-                // transition={{ duration: 5 }}
-              >
-                <motion.h1>{selectedItem?.id}</motion.h1>
-                <motion.p>{selectedItem?.title}</motion.p>
-                <motion.button onClick={(e: any) => setSelectedId(null)} />
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
+        <Works />
       </section>
       <section id="contact" className="contact"></section>
       <section id="test">
