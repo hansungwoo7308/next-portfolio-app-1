@@ -37,7 +37,7 @@ export default function Works() {
   //   // return document.removeEventListener(handleClick)
   // }, []);
   return (
-    <>
+    <section id="works" className="works">
       <h1>Works</h1>
       {/* <h1>selectedId : {selectedId}</h1> */}
       <div className="items">
@@ -94,6 +94,8 @@ export default function Works() {
                 {/* <motion.h1 layoutId={selectedId + "h1"}>{selectedItem?.id}</motion.h1>
                 <motion.p layoutId={selectedId + "p"}>{selectedItem?.title}</motion.p> */}
               </div>
+              <button onClick={(e: any) => setSelectedId(null)}>X</button>
+
               {/* <motion.button
                   onClick={(e: any) => setSelectedId(null)}
                   layoutId={selectedId + "button"}
@@ -105,6 +107,6 @@ export default function Works() {
           )}
         </AnimatePresence>
       </div>
-    </>
+    </section>
   );
 }

@@ -1,79 +1,12 @@
 "use client";
 import "@/app/page.scss";
-import {
-  AnimatePresence,
-  Variants,
-  m,
-  useAnimation,
-  useInView,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import { transform } from "typescript";
 import Test from "@/components/Test";
-import Image from "next/image";
 import { SocialIcon } from "react-social-icons";
-import {
-  SiCss3,
-  SiHtml5,
-  SiJavascript,
-  SiMongodb,
-  SiNextdotjs,
-  SiReact,
-  SiSass,
-  SiStyledcomponents,
-} from "react-icons/si";
 import Works from "@/components/Works";
+import About from "@/components/About";
+import Performance from "@/components/Performance";
 export default function Home() {
-  // intersection (hook)
-  const ref: any = useRef(null);
-  const isInView = useInView(ref);
-  // console.log({ isInView });
-  const animation = {
-    opacity: isInView ? "1" : "0",
-    transform: isInView ? "none" : "translateY(30px)",
-    transition: "all 1s",
-    // transform: isInView ? "none" : "translateX(-200px)",
-  };
-  // intersection (inline)
-  const somethingVariants: Variants = {
-    offscreen: { y: 30, opacity: 0 },
-    onscreen: { y: 0, opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
-  };
-
-  // performance (horizonal scroll)
-  const performanceRef: any = useRef(null);
-  // const stickerRef: any = useRef(null);
-  // useEffect(() => {
-  //   const performance: HTMLElement = performanceRef.current;
-  //   const sticker: HTMLElement = stickerRef.current;
-  //   window.addEventListener("scroll", () => {
-  //     const top = performance.getBoundingClientRect().top;
-  //     const bottom = performance.getBoundingClientRect().bottom;
-  //     console.log({ top, bottom });
-  //     // console.log("scroll");
-  //     if (top <= 0 && bottom > 0) {
-  //       // sticker.style.position = "sticky";
-  //       // sticker.style.top = "5rem";
-  //     } else {
-  //       // sticker.style.position = "block";
-  //     }
-  //   });
-  // }, []);
-  const horizonRef: any = useRef(null);
-  // const { scrollYProgress: scrollYProgressByPerformance } = useScroll({
-  //   target: performanceRef,
-  //   offset: ["start start", "end end"],
-  // });
-  const { scrollYProgress } = useScroll({
-    target: performanceRef,
-    offset: ["start start", "end end"],
-  });
-  const x = useTransform(scrollYProgress, [0, 1], ["200%", "-200%"]);
-  // const x = useTransform(scrollYProgress, [0, 1], ["150%", "-150%"]);
-
   // const isInView = useInView(ref, { amount: 1 });
   // useEffect(() => {
   //   const observer = new IntersectionObserver(
@@ -127,113 +60,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* <section className="performance" ref={performanceRef}>
-        <motion.div
-          className="horizon"
-          ref={horizonRef}
-          style={{
-            position: "sticky",
-            top: "50%",
-            translateY: "-50%",
-            x,
-          }}
-        >
-          <div className="box">
-            <Image src="/images/street-01.jpg" alt="alt" width={500} height={500} />
-          </div>
-          <div className="box">
-            <Image src="/images/street-02.jpg" alt="alt" width={500} height={500} />
-          </div>
-          <div className="box">
-            <Image src="/images/street-03.jpg" alt="alt" width={500} height={500} />
-          </div>
-          <div className="box">
-            <Image src="/images/street-04.jpg" alt="alt" width={500} height={500} />
-          </div>
-          <div className="box">
-            <Image src="/images/street-05.jpg" alt="alt" width={500} height={500} />
-          </div>
-        </motion.div>
-      </section> */}
-      <section id="about" className="about">
-        <div className="top">
-          <motion.div
-            className="left"
-            variants={somethingVariants}
-            initial="offscreen"
-            whileInView="onscreen"
-            // transition={{ duration: 1 }}
-          >
-            <div className="profile-img-outer">
-              <img src="/images/profile.jpg" alt="profile" />
-            </div>
-          </motion.div>
-          <motion.div
-            className="right"
-            variants={somethingVariants}
-            initial="offscreen"
-            whileInView="onscreen"
-            // transition={{ duration: 1 }}
-          >
-            <h1>About</h1>
-            <p>
-              Hello, I'm sungwoo, Han. Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-              ullam labore pariatur repudiandae? Nihil repellat deserunt vel molestiae veritatis
-              culpa quia, mollitia quae iusto! Quasi qui unde vero fugiat architecto.
-            </p>
-          </motion.div>
-        </div>
-        <div className="middle">
-          <motion.div
-            className="stack"
-            variants={somethingVariants}
-            initial="offscreen"
-            whileInView="onscreen"
-          >
-            <h3 className="title">Stack</h3>
-            <ul>
-              <SiJavascript size="5rem" />
-              <SiReact size="5rem" />
-              <SiNextdotjs size="5rem" />
-              <SiMongodb size="5rem" />
-              <SiStyledcomponents size="5rem" />
-              <SiSass size="5rem" />
-              <SiHtml5 size="5rem" />
-              <SiCss3 size="5rem" />
-            </ul>
-          </motion.div>
-        </div>
-        {/* <div className="left">
-          <div className="profile-img-outer" ref={ref} style={animation}>
-            <img src="/images/profile.jpg" alt="profile" />
-          </div>
-        </div>
-        <div className="right" ref={ref} style={animation}>
-          <h1>About</h1>
-          <p>
-            Hello, I'm sungwoo, Han. Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-            ullam labore pariatur repudiandae? Nihil repellat deserunt vel molestiae veritatis culpa
-            quia, mollitia quae iusto! Quasi qui unde vero fugiat architecto.
-          </p>
-        </div> */}
-        {/* <motion.p
-          variants={somethingVariants}
-          initial="offscreen"
-          whileInView="onscreen"
-          // initial={{ opacity: 0 }}
-          // whileInView={{ opacity: 1 }}
-          // transition={{ duration: 3 }}
-        >
-          something
-        </motion.p> */}
-      </section>
-      <section id="works" className="works">
-        <Works />
-      </section>
-      <section id="contact" className="contact"></section>
-      <section id="test">
+      <Performance />
+      <About />
+      {/* <Works /> */}
+      {/* <section id="contact" className="contact"></section> */}
+      {/* <section id="test">
         <Test />
-      </section>
+      </section> */}
       {/* <li>
               <SocialIcon url="www.facebook.com" bgColor="transparent" />
             </li>
