@@ -1,4 +1,4 @@
-import { useScroll, useSpring, useTransform } from "framer-motion";
+import { useAnimate, useInView, useScroll, useSpring, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -70,9 +70,20 @@ export default function Performance() {
   const scaleBySection1 = useTransform(section1Progress, [0.5, 1], [1, 30]);
 
   // section 2
-  const scaleBySection2 = useTransform(section2Progress, [0.2, 0.5], [2, 0.5]);
+  const scale2: any = useTransform(section2Progress, [0.2, 0.5], [2, 0.5]);
   const opacity2 = useTransform(section2Progress, [0.5, 0.7], [0, 1]);
-  const y2 = useTransform(section2Progress, [0.5, 0.7], ["-200%", "0%"]);
+  const [scope, animate] = useAnimate();
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (!scale2) return;
+      if (scale2.current === 0.5) {
+        animate(scope.current, { opacity: 1, translateY: "0%" }, { duration: 0.2 });
+      } else {
+        animate(scope.current, { opacity: 0, translateY: "-200%" }, { duration: 0.2 });
+      }
+    });
+  }, []);
+  // const y2 = useTransform(section2Progress, [0.5, 0.7], ["-200%", "0%"]);
 
   // section 3
   const x = useTransform(section3Progress, [0, 0.5], ["50%", "-150%"]);
@@ -171,7 +182,7 @@ export default function Performance() {
         <motion.div
           className="sticky-box"
           style={{
-            scale: scaleBySection2,
+            scale: scale2,
             position: "sticky",
             top: 0,
             display: "flex",
@@ -181,8 +192,8 @@ export default function Performance() {
           <Image
             src={"/images/street-06.jpg"}
             alt="alt"
-            width={500}
-            height={500}
+            width={1000}
+            height={1000}
             style={{
               zIndex: "10",
               marginBottom: "5rem",
@@ -191,14 +202,20 @@ export default function Performance() {
             }}
           />
           <motion.div
+            ref={scope}
             style={{
-              opacity: opacity2,
-              y: y2,
+              // opacity: opacity2,
+              // y: y2,
               // marginTop: "5rem",
               textAlign: "center",
               fontSize: 70,
               // pointerEvents: "none",
             }}
+            initial={{
+              opacity: 0,
+              translateY: "-200%",
+            }}
+            // whileInView={{ opacity: 1, translateY: 0 }}
           >
             <h1>something</h1>
           </motion.div>

@@ -6,7 +6,18 @@ import { SocialIcon } from "react-social-icons";
 import Works from "@/components/Works";
 import About from "@/components/About";
 import Performance from "@/components/Performance";
+import { useEffect, useRef } from "react";
+import { useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 export default function Home() {
+  // home section
+  const homeRef: any = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: homeRef,
+    offset: ["start start", "end start"],
+  });
+  const opacity: any = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
   // const isInView = useInView(ref, { amount: 1 });
   // useEffect(() => {
   //   const observer = new IntersectionObserver(
@@ -28,19 +39,13 @@ export default function Home() {
   return (
     <main>
       <section style={{ display: "none" }}>
-        <p>library : Framer-Motion</p>
         {/* <ol>
           <li>Page Transition</li>
-          <li>Animation : opacity, transform, scale, scroll</li>
-          <li>scale : zoom in, zoom out</li>
-          <li>scroll : useScroll, useTransform</li>
-          <li>sticky</li>
           <li>Add Videos</li>
-          <li>Parallax</li>
           <li>Theme (Dark and Bright mode)</li>
         </ol> */}
       </section>
-      <section id="home" className="home">
+      <motion.section id="home" className="home" ref={homeRef} style={{ opacity }}>
         <div className="wrapper">
           <div className="left">
             <h1>Youser Stack</h1>
@@ -50,8 +55,6 @@ export default function Home() {
               iusto! Quasi qui unde vero fugiat architecto.
             </p>
             <p>
-              다음의 방식을 추구
-              <br />
               가능한 군더더기 없는 디자인
               <br />
               명확한 표현 방식
@@ -59,8 +62,8 @@ export default function Home() {
             <button>something</button>
           </div>
         </div>
-      </section>
-      <Performance />
+      </motion.section>
+      {/* <Performance /> */}
       <About />
       {/* <Works /> */}
       {/* <section id="contact" className="contact"></section> */}
