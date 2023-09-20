@@ -2,22 +2,12 @@
 import "@/app/page.scss";
 import { transform } from "typescript";
 import Test from "@/components/Test";
-import { SocialIcon } from "react-social-icons";
-import Works from "@/components/Works";
-import About from "@/components/About";
+// import { SocialIcon } from "react-social-icons";
+import Landing from "@/components/Landing";
 import Performance from "@/components/Performance";
-import { useEffect, useRef } from "react";
-import { useScroll, useTransform } from "framer-motion";
-import { motion } from "framer-motion";
+import About from "@/components/About";
+import Works from "@/components/Works";
 export default function Home() {
-  // home section
-  const homeRef: any = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: homeRef,
-    offset: ["start start", "end start"],
-  });
-  const opacity: any = useTransform(scrollYProgress, [0, 1], [1, 0]);
-
   // const isInView = useInView(ref, { amount: 1 });
   // useEffect(() => {
   //   const observer = new IntersectionObserver(
@@ -38,31 +28,7 @@ export default function Home() {
   // }, []);
   return (
     <main>
-      <section style={{ display: "none" }}>
-        {/* <ol>
-          <li>Page Transition</li>
-          <li>Add Videos</li>
-          <li>Theme (Dark and Bright mode)</li>
-        </ol> */}
-      </section>
-      <motion.section id="home" className="home" ref={homeRef} style={{ opacity }}>
-        <div className="wrapper">
-          <div className="left">
-            <h1>Youser Stack</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At ullam labore pariatur
-              repudiandae? Nihil repellat deserunt vel molestiae veritatis culpa quia, mollitia quae
-              iusto! Quasi qui unde vero fugiat architecto.
-            </p>
-            <p>
-              가능한 군더더기 없는 디자인
-              <br />
-              명확한 표현 방식
-            </p>
-            <button>something</button>
-          </div>
-        </div>
-      </motion.section>
+      {/* <Landing /> */}
       {/* <Performance /> */}
       <About />
       {/* <Works /> */}
