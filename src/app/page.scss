@@ -32,24 +32,25 @@
   }
 }
 .performance {
-  height: 700vh;
+  // height: 800vh;
   // border-color: hotpink;
   padding: 0;
-  padding-bottom: 100vh;
+  // padding-bottom: 100vh;
+  overflow-y: clip;
   // display: flex;
   // justify-content: center;
-  overflow-y: clip;
 
   .horizon {
-    width: 300vw;
-    height: 30rem;
+    width: fit-content;
+    // width: 300vw;
+    // height: 30rem;
     // border: 2px solid coral;
     display: flex;
     gap: 20rem;
     padding: 1rem;
     .box {
-      width: 100%;
-      height: 100%;
+      width: 30rem;
+      // height: 100%;
       // border: 2px solid green;
     }
   }
@@ -58,6 +59,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    // border: 2px solid red;
   }
   canvas {
     border: 2px solid green;

@@ -44,48 +44,39 @@ class FlowFieldEffect {
   }
 }
 export default function Performance() {
-  // performance (horizonal scroll)
-  const performanceRef: any = useRef(null);
-  const titleRef: any = useRef(null);
-  // const stickerRef: any = useRef(null);
-  // useEffect(() => {
-  //   const performance: HTMLElement = performanceRef.current;
-  //   const sticker: HTMLElement = stickerRef.current;
-  //   window.addEventListener("scroll", () => {
-  //     const top = performance.getBoundingClientRect().top;
-  //     const bottom = performance.getBoundingClientRect().bottom;
-  //     console.log({ top, bottom });
-  //     // console.log("scroll");
-  //     if (top <= 0 && bottom > 0) {
-  //       // sticker.style.position = "sticky";
-  //       // sticker.style.top = "5rem";
-  //     } else {
-  //       // sticker.style.position = "block";
-  //     }
-  //   });
-  // }, []);
-  const horizonRef: any = useRef(null);
-  // const { scrollYProgress: scrollYProgressByPerformance } = useScroll({
-  //   target: performanceRef,
-  //   offset: ["start start", "end end"],
-  // });
-  const { scrollYProgress, scrollY } = useScroll({
-    target: performanceRef,
+  const section1Ref: any = useRef(null);
+  const section2Ref: any = useRef(null);
+  const section3Ref: any = useRef(null);
+
+  // get the scroll value by section
+  const { scrollYProgress: section1Progress } = useScroll({
+    target: section1Ref,
     offset: ["start start", "end end"],
   });
-  const { scrollYProgress: scrollYProgressByTitleRef } = useScroll({
-    target: titleRef,
-    // offset: ["end start", "end end"],
+  const { scrollYProgress: section2Progress } = useScroll({
+    target: section2Ref,
+    offset: ["start start", "end end"],
   });
+  const { scrollYProgress: section3Progress } = useScroll({
+    target: section3Ref,
+    offset: ["start start", "end end"],
+  });
+
   // const scale = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-  const scale = useTransform(scrollYProgress, [0.5, 1], [1, 30]);
-  const x = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-  // const x = useTransform(scrollYProgress, [0, 1], ["200%", "-200%"]);
+  // useTransform(progress, [starting point, ending point], [starting effect, ending effect])
+
+  // section 1
+  const opacity = useTransform(section1Progress, [0, 0.5], [0, 1]);
+  const scaleBySection1 = useTransform(section1Progress, [0.5, 1], [1, 30]);
+
+  // section 2
+  const scaleBySection2 = useTransform(section2Progress, [0.2, 0.5], [2, 0.5]);
+  const opacity2 = useTransform(section2Progress, [0.5, 0.7], [0, 1]);
+  const y2 = useTransform(section2Progress, [0.5, 0.7], ["-200%", "0%"]);
+
+  // section 3
+  const x = useTransform(section3Progress, [0, 0.5], ["50%", "-150%"]);
+
   // const width = useTransform(scrollYProgress, [0, 1], ["200%", "-200%"]);
   // const x = useTransform(scrollYProgress, [0, 1], ["150%", "-150%"]);
   // useEffect(() => {
@@ -98,6 +89,7 @@ export default function Performance() {
 
   // canvas
   const canvasRef: any = useRef(null);
+
   // useEffect(() => {
   //   canvas = canvasRef.current;
   //   ctx = canvas.getContext("2d");
@@ -128,70 +120,117 @@ export default function Performance() {
   //   });
   // }, []);
 
+  // const stickerRef: any = useRef(null);
+  // useEffect(() => {
+  //   const performance: HTMLElement = performanceRef.current;
+  //   const sticker: HTMLElement = stickerRef.current;
+  //   window.addEventListener("scroll", () => {
+  //     const top = performance.getBoundingClientRect().top;
+  //     const bottom = performance.getBoundingClientRect().bottom;
+  //     console.log({ top, bottom });
+  //     // console.log("scroll");
+  //     if (top <= 0 && bottom > 0) {
+  //       // sticker.style.position = "sticky";
+  //       // sticker.style.top = "5rem";
+  //     } else {
+  //       // sticker.style.position = "block";
+  //     }
+  //   });
+  // }, []);
+  // const sliderRef: any = useRef(null);
+  // const { scrollYProgress: scrollYProgressByPerformance } = useScroll({
+  //   target: performanceRef,
+  //   offset: ["start start", "end end"],
+  // });
   return (
-    <section className="performance" ref={performanceRef}>
-      {/* <motion.div
-        className="horizon"
-        ref={horizonRef}
-        style={{
-          position: "sticky",
-          top: "50%",
-          translateY: "-50%",
-          x,
-        }}
-      >
-        <div className="box">
-          <Image src="/images/street-01.jpg" alt="alt" width={500} height={500} />
-        </div>
-        <div className="box">
-          <Image src="/images/street-02.jpg" alt="alt" width={500} height={500} />
-        </div>
-        <div className="box">
-          <Image src="/images/street-03.jpg" alt="alt" width={500} height={500} />
-        </div>
-        <div className="box">
-          <Image src="/images/street-04.jpg" alt="alt" width={500} height={500} />
-        </div>
-        <div className="box">
-          <Image src="/images/street-05.jpg" alt="alt" width={500} height={500} />
-        </div>
-      </motion.div> */}
-      {/* <motion.div
-        className="sticky-box"
-        style={{
-          scale,
-          position: "sticky",
-          top: 0,
-        }}
-      >
-        <Image src={"/images/street-06.jpg"} alt="alt" width={500} height={500} />
-      </motion.div> */}
-      <motion.div
-        ref={titleRef}
-        style={{
-          scale,
-          opacity,
-          position: "sticky",
-          top: 0,
-          textAlign: "center",
-          fontSize: 100,
-          height: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <div
+    <>
+      <section className="performance" ref={section1Ref} style={{ height: "500vh" }}>
+        <motion.div
           style={{
-            border: "2px solid blue",
+            scale: scaleBySection1,
+            opacity,
+            position: "sticky",
+            top: 0,
+            textAlign: "center",
+            fontSize: 100,
+            height: "100vh",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            pointerEvents: "none",
           }}
         >
           <h1>Youser</h1>
           <h1>Stack</h1>
-        </div>
-      </motion.div>
-      {/* <canvas id="canvas" ref={canvasRef} width={1000} height={1000}></canvas> */}
-    </section>
+        </motion.div>
+
+        {/* <canvas id="canvas" ref={canvasRef} width={1000} height={1000}></canvas> */}
+      </section>
+      <section className="performance" ref={section2Ref} style={{ height: "700vh" }}>
+        <motion.div
+          className="sticky-box"
+          style={{
+            scale: scaleBySection2,
+            position: "sticky",
+            top: 0,
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Image
+            src={"/images/street-06.jpg"}
+            alt="alt"
+            width={500}
+            height={500}
+            style={{
+              zIndex: "10",
+              marginBottom: "5rem",
+              width: "70%",
+              height: "70%",
+            }}
+          />
+          <motion.div
+            style={{
+              opacity: opacity2,
+              y: y2,
+              // marginTop: "5rem",
+              textAlign: "center",
+              fontSize: 70,
+              // pointerEvents: "none",
+            }}
+          >
+            <h1>something</h1>
+          </motion.div>
+        </motion.div>
+      </section>
+      <section className="performance" ref={section3Ref} style={{ height: "500vh" }}>
+        <motion.div
+          className="horizon"
+          style={{
+            position: "sticky",
+            top: "50%",
+            translateY: "-50%",
+            x,
+          }}
+        >
+          <div className="box">
+            <Image src="/images/street-01.jpg" alt="alt" width={500} height={500} />
+          </div>
+          <div className="box">
+            <Image src="/images/street-02.jpg" alt="alt" width={500} height={500} />
+          </div>
+          <div className="box">
+            <Image src="/images/street-03.jpg" alt="alt" width={500} height={500} />
+          </div>
+          <div className="box">
+            <Image src="/images/street-04.jpg" alt="alt" width={500} height={500} />
+          </div>
+          <div className="box">
+            <Image src="/images/street-05.jpg" alt="alt" width={500} height={500} />
+          </div>
+        </motion.div>
+      </section>
+    </>
   );
 }
