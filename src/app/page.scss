@@ -118,14 +118,17 @@
     // border: 2px solid green;
     padding: 1rem;
     .title {
-      margin-bottom: 2rem;
+      margin-bottom: 5rem;
+      text-align: center;
     }
     .stack {
-      ul {
-        display: flex;
+      div {
+        display: grid;
+        grid-template-columns: repeat(5, 5rem);
+        gap: 5rem;
         justify-content: center;
         // align-items: center;
-        gap: 1rem;
+        position: relative;
       }
     }
   }
@@ -215,7 +218,20 @@
       height: 50%;
     }
     .content {
+      height: 50%;
       padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .stack {
+        display: flex;
+        gap: 1rem;
+        li {
+          background-color: #333;
+          padding: 1rem;
+          border-radius: 10px;
+        }
+      }
     }
   }
   > h1 {

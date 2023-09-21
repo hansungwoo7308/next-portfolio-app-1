@@ -30,12 +30,12 @@ export default function Home() {
     <main>
       {/* <Landing /> */}
       {/* <Performance /> */}
-      <About />
-      {/* <Works /> */}
+      {/* <About /> */}
+      <Works />
       {/* <section id="contact" className="contact"></section> */}
-      {/* <section id="test">
+      <section id="test">
         <Test />
-      </section> */}
+      </section>
       {/* <li>
               <SocialIcon url="www.facebook.com" bgColor="transparent" />
             </li>

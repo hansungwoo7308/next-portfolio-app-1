@@ -67,6 +67,10 @@
     --callout-border-rgb: 108, 108, 108;
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
+
+    // added custom settings
+    --cubic-bezier-main: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --cubic-bezier-second: cubic-bezier(0.755, 0.05, 0.855, 0.06);
   }
 }
 
@@ -79,9 +83,11 @@
 html,
 body {
   max-width: 100vw;
-  // overflow-x: hidden;
   overflow-x: clip;
   scroll-behavior: smooth;
+  // overflow-x: hidden;
+  // overflow-y: hidden;
+  // scroll-snap-type: y mandatory;
 }
 
 body {
@@ -132,6 +138,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 70vh;
+  // height: 100%;
+  // overflow-y: scroll;
   section {
     width: 100%;
     max-width: 1000px;
@@ -141,6 +149,7 @@ main {
     /* padding-top: 4rem; */
     margin: auto;
     border: 2px dashed;
+    scroll-snap-align: start;
   }
 }
 

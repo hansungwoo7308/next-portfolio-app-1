@@ -7,6 +7,7 @@ import {
   SiMongodb,
   SiNextdotjs,
   SiReact,
+  SiRedux,
   SiSass,
   SiStyledcomponents,
 } from "react-icons/si";
@@ -47,11 +48,16 @@ export default function About() {
           whileInView="onscreen"
           // transition={{ duration: 1 }}
         >
-          <h1>About</h1>
+          <div>
+            <h1>About Me</h1>
+            <small>Youser : nickname</small>
+          </div>
           <p>
-            Hello, I'm sungwoo, Han. Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-            ullam labore pariatur repudiandae? Nihil repellat deserunt vel molestiae veritatis culpa
-            quia, mollitia quae iusto! Quasi qui unde vero fugiat architecto.
+            Hi, I'm sungwoo, Han. I'm studying web front-end tech, looking for getting related jobs.
+          </p>
+          <p>
+            안녕하세요. 한성우입니다. 웹 프론트엔드 기술을 공부 중이며, 해당 직무를 구하는 기업을
+            모색 중에 있습니다.
           </p>
         </motion.div>
       </div>
@@ -62,17 +68,18 @@ export default function About() {
           initial="offscreen"
           whileInView="onscreen"
         >
-          <h3 className="title">Stack</h3>
-          <ul>
+          <h1 className="title">Stack</h1>
+          <div>
             <SiJavascript size="5rem" />
             <SiReact size="5rem" />
             <SiNextdotjs size="5rem" />
+            <SiRedux size="5rem" />
             <SiMongodb size="5rem" />
             <SiStyledcomponents size="5rem" />
             <SiSass size="5rem" />
             <SiHtml5 size="5rem" />
             <SiCss3 size="5rem" />
-          </ul>
+          </div>
         </motion.div>
       </div>
       {/* <div className="left">

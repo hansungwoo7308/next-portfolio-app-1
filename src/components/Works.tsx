@@ -10,17 +10,20 @@ export default function Works() {
     {
       id: "E-commerce Next App",
       title: "E-commerce Next App",
-      stack: ["nextjs", "styled-components", "mongodb", "typescript"],
+      stack: ["nextjs", "redux", "mongodb", "styled-components", "typescript"],
+      description: "Full Stack으로 이루어진 프로젝트입니다.",
     },
     {
       id: "Portfolio",
       title: "Portfolio",
       stack: ["nextjs", "scss", "framer-motion", "typescript"],
+      description: "One Page로 이루어진 프로젝트입니다.",
     },
     {
       id: "Next App",
       title: "Next App",
       stack: ["nextjs", "typescript"],
+      description: "Next App으로 이루어진 프로젝트입니다.",
     },
   ];
   useEffect(() => {
@@ -32,9 +35,7 @@ export default function Works() {
     console.log({ selectedItem });
   }, [selectedItem]);
   // useEffect(() => {
-  //   const handleClick = () => setSelectedId(null);
-  //   if (!selectedId) window.addEventListener("click", handleClick);
-  //   // return document.removeEventListener(handleClick)
+  //   window.addEventListener("wheel", (e) => console.log(e));
   // }, []);
   return (
     <section id="works" className="works">
@@ -86,11 +87,12 @@ export default function Works() {
               </div>
               <div className="content">
                 <h3>{selectedItem?.title}</h3>
-                <ul>
+                <ul className="stack">
                   {selectedItem?.stack.map((v: any) => (
-                    <li>{v}</li>
+                    <li key={v}>{v}</li>
                   ))}
                 </ul>
+                <p>{selectedItem?.description}</p>
                 {/* <motion.h1 layoutId={selectedId + "h1"}>{selectedItem?.id}</motion.h1>
                 <motion.p layoutId={selectedId + "p"}>{selectedItem?.title}</motion.p> */}
               </div>
