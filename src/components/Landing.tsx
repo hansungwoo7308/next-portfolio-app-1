@@ -33,15 +33,19 @@ export default function Landing() {
       <div className="wrapper">
         <motion.div className="left" ref={scope}>
           <h1>Youser Stack</h1>
+          <small>Front End Developer</small>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. At ullam labore pariatur
             repudiandae? Nihil repellat deserunt vel molestiae veritatis culpa quia, mollitia quae
             iusto! Quasi qui unde vero fugiat architecto.
           </p>
           <p>
-            가능한 군더더기 없는 디자인
+            Simple Design
             <br />
-            명확한 표현 방식
+            Client-Focused
+            <br />
+            Flexible
+            <br />
           </p>
           <button>something</button>
         </motion.div>

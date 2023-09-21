@@ -69,42 +69,50 @@ export default function About() {
           whileInView="onscreen"
         >
           <h1 className="title">Stack</h1>
-          <div>
-            <SiJavascript size="5rem" />
-            <SiReact size="5rem" />
-            <SiNextdotjs size="5rem" />
-            <SiRedux size="5rem" />
-            <SiMongodb size="5rem" />
-            <SiStyledcomponents size="5rem" />
-            <SiSass size="5rem" />
-            <SiHtml5 size="5rem" />
-            <SiCss3 size="5rem" />
+          <div className="stack-list">
+            <SiJavascript size="3rem" />
+            <SiReact size="3rem" />
+            <SiNextdotjs size="3rem" />
+            <SiRedux size="3rem" />
+            <SiMongodb size="3rem" />
+            <SiStyledcomponents size="3rem" />
+            <SiSass size="3rem" />
+            <SiHtml5 size="3rem" />
+            <SiCss3 size="3rem" />
           </div>
         </motion.div>
       </div>
-      {/* <div className="left">
-          <div className="profile-img-outer" ref={ref} style={animation}>
-            <img src="/images/profile.jpg" alt="profile" />
-          </div>
-        </div>
-        <div className="right" ref={ref} style={animation}>
-          <h1>About</h1>
-          <p>
-            Hello, I'm sungwoo, Han. Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-            ullam labore pariatur repudiandae? Nihil repellat deserunt vel molestiae veritatis culpa
-            quia, mollitia quae iusto! Quasi qui unde vero fugiat architecto.
-          </p>
-        </div> */}
-      {/* <motion.p
+      <div className="middle">
+        <motion.div
+          className="additional-information"
           variants={somethingVariants}
           initial="offscreen"
           whileInView="onscreen"
-          // initial={{ opacity: 0 }}
-          // whileInView={{ opacity: 1 }}
-          // transition={{ duration: 3 }}
         >
-          something
-        </motion.p> */}
+          <h1 className="title">Additional Information</h1>
+          <p>Semantic HTML</p>
+          <p>Responsive Design</p>
+          <p>AJAX</p>
+          <p>Semantic HTML</p>
+          <p>Responsive Design</p>
+          <p>AJAX</p>
+          <p>Semantic HTML</p>
+          <p>Responsive Design</p>
+          <p>AJAX</p>
+          <p>Semantic HTML</p>
+          <p>Responsive Design</p>
+          <p>AJAX</p>
+          <p>Semantic HTML</p>
+          <p>Responsive Design</p>
+          <p>AJAX</p>
+          <p>Semantic HTML</p>
+          <p>Responsive Design</p>
+          <p>AJAX</p>
+          <p>Semantic HTML</p>
+          <p>Responsive Design</p>
+          <p>AJAX</p>
+        </motion.div>
+      </div>
     </section>
   );
 }

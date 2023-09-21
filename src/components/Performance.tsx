@@ -87,6 +87,7 @@ export default function Performance() {
 
   // section 3
   const x = useTransform(section3Progress, [0, 0.5], ["50%", "-150%"]);
+  const opacity3 = useTransform(section3Progress, [0, 0.2, 0.4, 0.6], [0, 1, 1, 0]);
 
   // const width = useTransform(scrollYProgress, [0, 1], ["200%", "-200%"]);
   // const x = useTransform(scrollYProgress, [0, 1], ["150%", "-150%"]);
@@ -217,7 +218,7 @@ export default function Performance() {
             }}
             // whileInView={{ opacity: 1, translateY: 0 }}
           >
-            <h1>something</h1>
+            <h1>Direction</h1>
           </motion.div>
         </motion.div>
       </section>
@@ -246,6 +247,19 @@ export default function Performance() {
           <div className="box">
             <Image src="/images/street-05.jpg" alt="alt" width={500} height={500} />
           </div>
+        </motion.div>
+        <motion.div
+          className="message"
+          style={{
+            position: "sticky",
+            top: "50%",
+            translateY: "-50%",
+            // x,
+            fontSize: 100,
+            opacity: opacity3,
+          }}
+        >
+          <h1>Inspirations</h1>
         </motion.div>
       </section>
     </>

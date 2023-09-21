@@ -28,14 +28,14 @@ export default function Home() {
   // }, []);
   return (
     <main>
-      {/* <Landing /> */}
+      <Landing />
       {/* <Performance /> */}
-      {/* <About /> */}
+      <About />
       <Works />
       {/* <section id="contact" className="contact"></section> */}
-      <section id="test">
+      {/* <section id="test">
         <Test />
-      </section>
+      </section> */}
       {/* <li>
               <SocialIcon url="www.facebook.com" bgColor="transparent" />
             </li>

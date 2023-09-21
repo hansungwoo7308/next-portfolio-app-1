@@ -33,6 +33,13 @@
     button {
       padding: 1rem;
       cursor: pointer;
+      border: none;
+
+      background-color: chocolate;
+      transition: all 0.5s;
+      &:hover {
+        background-color: coral;
+      }
     }
   }
 }
@@ -58,6 +65,9 @@
       // height: 100%;
       // border: 2px solid green;
     }
+  }
+  .message {
+    text-align: center;
   }
   .sticky-box {
     height: 100vh;
@@ -118,17 +128,20 @@
     // border: 2px solid green;
     padding: 1rem;
     .title {
-      margin-bottom: 5rem;
-      text-align: center;
+      margin-bottom: 2rem;
+      // text-align: center;
     }
     .stack {
-      div {
-        display: grid;
-        grid-template-columns: repeat(5, 5rem);
-        gap: 5rem;
-        justify-content: center;
+      .stack-list {
+        display: flex;
+        // display: grid;
+        // grid-template-columns: repeat(5, 5rem);
+        gap: 3rem;
+        // justify-content: center;
         // align-items: center;
         position: relative;
+      }
+      .additional-information {
       }
     }
   }
