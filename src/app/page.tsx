@@ -31,7 +31,7 @@ export default function Home() {
       <Landing />
       {/* <Performance /> */}
       <About />
-      <Works />
+      {/* <Works /> */}
       {/* <section id="contact" className="contact"></section> */}
       {/* <section id="test">
         <Test />

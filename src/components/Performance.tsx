@@ -67,11 +67,11 @@ export default function Performance() {
 
   // section 1
   const opacity = useTransform(section1Progress, [0, 0.5], [0, 1]);
-  const scaleBySection1 = useTransform(section1Progress, [0.5, 1], [1, 30]);
+  const scale1 = useTransform(section1Progress, [0.5, 1], [1, 30]);
 
   // section 2
+  const opacity2 = useTransform(section2Progress, [0, 0.2], [0, 1]);
   const scale2: any = useTransform(section2Progress, [0.2, 0.5], [2, 0.5]);
-  const opacity2 = useTransform(section2Progress, [0.5, 0.7], [0, 1]);
   const [scope, animate] = useAnimate();
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -159,7 +159,7 @@ export default function Performance() {
       <section className="performance" ref={section1Ref} style={{ height: "500vh" }}>
         <motion.div
           style={{
-            scale: scaleBySection1,
+            scale: scale1,
             opacity,
             position: "sticky",
             top: 0,
@@ -190,18 +190,17 @@ export default function Performance() {
             flexDirection: "column",
           }}
         >
-          <Image
-            src={"/images/street-06.jpg"}
-            alt="alt"
-            width={1000}
-            height={1000}
+          <motion.div
             style={{
+              opacity: opacity2,
               zIndex: "10",
               marginBottom: "5rem",
               width: "70%",
               height: "70%",
             }}
-          />
+          >
+            <Image src={"/images/street-06.jpg"} alt="alt" width={1000} height={1000} />
+          </motion.div>
           <motion.div
             ref={scope}
             style={{

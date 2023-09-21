@@ -14,11 +14,11 @@ export default function Landing() {
   useEffect(() => {
     window.addEventListener("scroll", () => {
       // console.log({ scrollY });
-      if (scrollY.current > 200) {
-        console.log("200...");
-        animate(scope.current, { opacity: 0, translateY: "-500%" }, { duration: 0.5 });
-      } else {
+      // console.log("current.scrollY : ", scrollY.current);
+      if (window.scrollY <= 200) {
         animate(scope.current, { opacity: 1, translateY: "0%" }, { duration: 0.5 });
+      } else {
+        animate(scope.current, { opacity: 0, translateY: "-500%" }, { duration: 0.5 });
       }
       // if (!scale2) return;
       // if (scale2.current === 0.5) {
