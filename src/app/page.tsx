@@ -1,12 +1,12 @@
 "use client";
 import "@/app/page.scss";
-import { transform } from "typescript";
 import Test from "@/components/Test";
-// import { SocialIcon } from "react-social-icons";
+
 import Landing from "@/components/Landing";
 import Performance from "@/components/Performance";
 import About from "@/components/About";
 import Works from "@/components/Works";
+import Contact from "@/components/Contact";
 export default function Home() {
   // const isInView = useInView(ref, { amount: 1 });
   // useEffect(() => {
@@ -30,8 +30,9 @@ export default function Home() {
     <main>
       <Landing />
       {/* <Performance /> */}
-      <About />
+      {/* <About /> */}
       {/* <Works /> */}
+      <Contact />
       {/* <section id="contact" className="contact"></section> */}
       {/* <section id="test">
         <Test />

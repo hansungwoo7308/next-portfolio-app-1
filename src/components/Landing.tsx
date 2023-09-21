@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 export default function Landing() {
   // home section
   const homeRef: any = useRef(null);
-  const { scrollYProgress, scrollY }: any = useScroll({
+  const { scrollYProgress }: any = useScroll({
     target: homeRef,
     offset: ["start start", "end start"],
   });
   const opacity: any = useTransform(scrollYProgress, [0, 1], [1, 0]);
-  // const y: any = useTransform(scrollY, [0, 100], ["0%", "-300%"]);
   const [scope, animate] = useAnimate();
   useEffect(() => {
     window.addEventListener("scroll", () => {

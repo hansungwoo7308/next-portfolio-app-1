@@ -151,7 +151,7 @@ main {
     /* padding-top: 4rem; */
     padding: 5rem;
     margin: auto;
-    // border: 2px dashed;
+    border: 2px dashed;
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
@@ -236,6 +236,10 @@ img {
 ul,
 ol {
   list-style: none;
+}
+
+button {
+  border: none;
 }
 
 @media (prefers-color-scheme: dark) {
