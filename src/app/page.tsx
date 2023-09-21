@@ -29,9 +29,9 @@ export default function Home() {
   return (
     <main>
       <Landing />
-      {/* <Performance /> */}
-      {/* <About /> */}
-      {/* <Works /> */}
+      <Performance />
+      <About />
+      <Works />
       <Contact />
       {/* <section id="contact" className="contact"></section> */}
       {/* <section id="test">

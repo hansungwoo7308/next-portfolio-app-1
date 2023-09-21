@@ -50,7 +50,7 @@ export default function About() {
         >
           <div>
             <h1>About Me</h1>
-            <small>Youser : nickname</small>
+            <small>Youser Stack</small>
           </div>
           <p>
             Hi, I'm sungwoo, Han. I'm studying web front-end tech, looking for getting related jobs.
