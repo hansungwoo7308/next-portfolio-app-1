@@ -149,7 +149,7 @@ main {
     min-height: 100vh;
     // height: 100vh;
     /* padding-top: 4rem; */
-    padding: 5rem;
+    // padding: 5rem;
     margin: auto;
     border: 2px dashed;
     scroll-snap-align: start;
@@ -245,5 +245,17 @@ button {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media (width < 1000px) {
+  main {
+    section {
+      > .wrapper {
+        > .left {
+          width: 100%;
+        }
+      }
+    }
   }
 }

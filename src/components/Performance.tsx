@@ -66,12 +66,12 @@ export default function Performance() {
   // useTransform(progress, [starting point, ending point], [starting effect, ending effect])
 
   // section 1
-  const opacity = useTransform(section1Progress, [0, 0.5], [0, 1]);
-  const scale1 = useTransform(section1Progress, [0.5, 1], [1, 30]);
+  const opacity = useTransform(section1Progress, [0, 0.2], [0, 1]);
+  const scale1 = useTransform(section1Progress, [0.2, 0.8], [1, 150]);
 
   // section 2
   const opacity2 = useTransform(section2Progress, [0, 0.2], [0, 1]);
-  const scale2: any = useTransform(section2Progress, [0.2, 0.5], [2, 0.5]);
+  const scale2: any = useTransform(section2Progress, [0.2, 0.5], [3, 0.5]);
   const [scope, animate] = useAnimate();
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -156,21 +156,12 @@ export default function Performance() {
   // });
   return (
     <>
-      <section className="performance" ref={section1Ref} style={{ height: "500vh" }}>
+      <section className="performance" ref={section1Ref} style={{ height: "1000vh" }}>
         <motion.div
+          className="nickname"
           style={{
             scale: scale1,
             opacity,
-            position: "sticky",
-            top: 0,
-            textAlign: "center",
-            fontSize: 100,
-            height: "100vh",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            pointerEvents: "none",
           }}
         >
           <h1>Youser</h1>

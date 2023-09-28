@@ -2,7 +2,7 @@
 import "@/app/page.scss";
 import Test from "@/components/Test";
 
-import Landing from "@/components/Landing";
+import Landing from "@/components/Hero";
 import Performance from "@/components/Performance";
 import About from "@/components/About";
 import Works from "@/components/Works";

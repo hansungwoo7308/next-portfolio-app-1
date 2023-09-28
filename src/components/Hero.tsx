@@ -1,7 +1,7 @@
 import { useAnimate, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-export default function Landing() {
+export default function Hero() {
   // home section
   const homeRef: any = useRef(null);
   const { scrollYProgress }: any = useScroll({
