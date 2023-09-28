@@ -1,4 +1,5 @@
 import { Variants, motion, useInView } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 import {
   SiCss3,
@@ -38,7 +39,7 @@ export default function About() {
           // transition={{ duration: 1 }}
         >
           <div className="profile-img-outer">
-            <img src="/images/profile.jpg" alt="profile" />
+            <Image src={"/images/profile.jpg"} alt="profile" />
           </div>
         </motion.div>
         <motion.div
@@ -53,7 +54,9 @@ export default function About() {
             <small>Youser Stack</small>
           </div>
           <p>
-            Hi, I'm sungwoo, Han. I'm studying web front-end tech, looking for getting related jobs.
+            {
+              "Hi, I'm sungwoo, Han. I'm studying web front-end tech, looking for getting related jobs."
+            }
           </p>
           <p>
             안녕하세요. 한성우입니다. 웹 프론트엔드 기술을 공부 중이며, 해당 직무를 구하는 기업을
