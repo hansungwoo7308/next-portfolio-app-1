@@ -39,7 +39,7 @@ export default function About() {
           // transition={{ duration: 1 }}
         >
           <div className="profile-img-outer">
-            <Image src={"/images/profile.jpg"} alt="profile" />
+            <Image src={"/images/profile.jpg" || "/images/profile.JPG"} alt="profile" />
           </div>
         </motion.div>
         <motion.div
