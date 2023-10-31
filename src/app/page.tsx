@@ -2,11 +2,12 @@
 import "@/app/page.scss";
 import Test from "@/components/Test";
 
-import Landing from "@/components/Hero";
+import Hero from "@/components/Hero";
 import Performance from "@/components/Performance";
 import About from "@/components/About";
 import Works from "@/components/Works";
 import Contact from "@/components/Contact";
+
 export default function Home() {
   // const isInView = useInView(ref, { amount: 1 });
   // useEffect(() => {
@@ -28,7 +29,7 @@ export default function Home() {
   // }, []);
   return (
     <main>
-      <Landing />
+      <Hero />
       <Performance />
       <About />
       <Works />

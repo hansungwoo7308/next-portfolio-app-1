@@ -1,6 +1,7 @@
 import { useAnimate, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+
 export default function Hero() {
   // home section
   const homeRef: any = useRef(null);
@@ -10,6 +11,7 @@ export default function Hero() {
   });
   const opacity: any = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const [scope, animate] = useAnimate();
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
       // console.log({ scrollY });
@@ -27,6 +29,7 @@ export default function Hero() {
       // }
     });
   }, []);
+
   return (
     <motion.section id="home" className="home" ref={homeRef} style={{ opacity }}>
       <div className="wrapper">

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 export default function Header() {
   const [hidden, setHidden]: any = useState(false);
   const { scrollY } = useScroll();
+
   // MotionValueEvent가 scrollY의 값을 트랙킹(추적)한다.
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
@@ -16,6 +17,7 @@ export default function Header() {
     // scroll up : previous > latest
     else setHidden(false);
   });
+
   // useEffect(() => {
   //   const unsubscribe = scrollY.on("change", (latestValue: number) => console.log({ latestValue }));
   //   return () => unsubscribe();
