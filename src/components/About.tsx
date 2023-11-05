@@ -56,7 +56,7 @@ export default function About() {
             <h1>About Me</h1>
             <small>youserstack</small>
           </div>
-          <p>"Hi. I'm studying web front-end tech, looking for getting related jobs."</p>
+          <p>Hi. I&ldquo;m studying web front-end tech, looking for getting related jobs.</p>
           <p>
             안녕하세요. 웹 프론트엔드 기술을 공부 중이며, 해당 직무를 구하는 기업을 모색 중에
             있습니다.
