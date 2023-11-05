@@ -177,10 +177,10 @@ export default function Performance() {
   return (
     <>
       <section className="performance" ref={section1Ref} style={{ height: "1000vh" }}>
-        <motion.div className="nickname" style={{ scale: scale1, opacity }}>
+        {/* <motion.div className="nickname" style={{ scale: scale1, opacity }}>
           <h1>Youser</h1>
           <h1>Stack</h1>
-        </motion.div>
+        </motion.div> */}
       </section>
       <section className="performance" ref={section2Ref} style={{ height: "700vh" }}>
         <motion.div
