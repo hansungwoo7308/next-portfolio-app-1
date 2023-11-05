@@ -228,6 +228,7 @@ export default function Performance() {
         <motion.div
           className="horizon"
           style={{
+            height: "100vh",
             position: "sticky",
             top: "50%",
             translateY: "-50%",

@@ -51,7 +51,7 @@
   }
 }
 .performance {
-  overflow-y: clip;
+  // overflow-y: clip;
   // border: 2px solid yellow;
 
   .nickname {
@@ -70,12 +70,13 @@
   }
   .horizon {
     width: fit-content;
-    height: 100vh;
-    // border: 2px solid red;
+    // height: 100vh;
+    border: 2px solid red;
     display: flex;
     align-items: center;
     gap: 30rem;
     padding: 1rem;
+    overflow-x: auto;
     .box {
       width: 20rem;
       height: 20rem;
