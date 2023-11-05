@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
+
 const size = { width: "2rem", height: "2rem" };
+
 export default function Footer() {
   return (
     <footer>

@@ -3,10 +3,10 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  // home section
-  const homeRef: any = useRef(null);
+  // hero section
+  const heroRef: any = useRef(null);
   const { scrollYProgress }: any = useScroll({
-    target: homeRef,
+    target: heroRef,
     offset: ["start start", "end start"],
   });
   const opacity: any = useTransform(scrollYProgress, [0, 1], [1, 0]);
@@ -31,9 +31,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <motion.section id="home" className="home" ref={homeRef} style={{ opacity }}>
-      <div className="wrapper">
-        <motion.div className="left" ref={scope}>
+    <motion.section className="hero" ref={heroRef} style={{ opacity }}>
+      <div className="hero-inner">
+        <motion.div className="hero-content" ref={scope}>
           <h1>Youser Stack</h1>
           <small>Front End Developer</small>
           <p>

@@ -1,8 +1,9 @@
 .section {
   align-items: center;
 }
-.home {
-  min-width: 100vw;
+.hero {
+  // min-width: 100vw;
+  max-width: initial;
   background-image: 
     // linear-gradient
     linear-gradient(to bottom, black 2%, transparent, transparent, transparent, black 90%),
@@ -14,15 +15,16 @@
   background-size: cover;
   background-attachment: fixed;
   border: none;
-  > .wrapper {
+  .hero-inner {
+    // width: 1000px;
     max-width: 1000px;
     height: 100%;
     margin: auto;
-    // border: 2px dashed;
+    border: 2px dashed;
     display: flex;
     align-items: center;
   }
-  .left {
+  .hero-content {
     width: 50%;
     // border: 2px solid;
     padding: 1rem;
@@ -42,6 +44,12 @@
       }
     }
   }
+  @media (width < 1000px) {
+    .hero-content {
+      width: 100%;
+      padding: 3rem;
+    }
+  }
 }
 .performance {
   // height: 800vh;
@@ -52,10 +60,10 @@
   // display: flex;
   // justify-content: center;
 
-  > .nickname {
+  .nickname {
     height: 100vh;
-    border: 10px solid red;
-    background-color: #333;
+    border: 10px solid green;
+    // background-color: #333;
     position: sticky;
     top: 0;
     // text-align: center;

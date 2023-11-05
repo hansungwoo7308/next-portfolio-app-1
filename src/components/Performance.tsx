@@ -2,47 +2,49 @@ import { useAnimate, useInView, useScroll, useSpring, useTransform } from "frame
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-let canvas: HTMLCanvasElement;
-let ctx: CanvasRenderingContext2D;
-let instance;
-let instanceAnimation: any;
-class FlowFieldEffect {
-  // #ctx: any;
-  // #width: any;
-  // #height: any;
-  ctx: CanvasRenderingContext2D;
-  width;
-  height;
-  x = 0;
-  y = 0;
-  constructor(ctx: any, width: any, height: any) {
-    this.ctx = ctx;
-    this.width = width;
-    this.height = height;
-    // this.x = 0
-    // this.y = 0
-  }
-  draw(x: any, y: any) {
-    this.ctx.fillStyle = "green";
-    // this.ctx.lineWidth = 10;
-    // this.ctx.fillRect(20, 20, 200, 200);
-    this.ctx.strokeStyle = "blue";
-    this.ctx.lineWidth = 5;
-    this.ctx.strokeRect(this.x, this.y, 50, 50);
-    // this.ctx.beginPath();
-    // this.ctx.moveTo(100, 100);
-    // this.ctx.moveTo(x, y);
-    // this.ctx.lineTo(x + length, y + length);
-    // this.ctx.stroke();
-  }
-  animate() {
-    console.log("animating");
-    this.ctx.clearRect(0, 0, this.width, this.height);
-    this.draw(100, 100);
-    this.x += 1;
-    instanceAnimation = requestAnimationFrame(this.animate.bind(this));
-  }
-}
+
+// let canvas: HTMLCanvasElement;
+// let ctx: CanvasRenderingContext2D;
+// let instance;
+// let instanceAnimation: any;
+// class FlowFieldEffect {
+//   // #ctx: any;
+//   // #width: any;
+//   // #height: any;
+//   ctx: CanvasRenderingContext2D;
+//   width;
+//   height;
+//   x = 0;
+//   y = 0;
+//   constructor(ctx: any, width: any, height: any) {
+//     this.ctx = ctx;
+//     this.width = width;
+//     this.height = height;
+//     // this.x = 0
+//     // this.y = 0
+//   }
+//   draw(x: any, y: any) {
+//     this.ctx.fillStyle = "green";
+//     // this.ctx.lineWidth = 10;
+//     // this.ctx.fillRect(20, 20, 200, 200);
+//     this.ctx.strokeStyle = "blue";
+//     this.ctx.lineWidth = 5;
+//     this.ctx.strokeRect(this.x, this.y, 50, 50);
+//     // this.ctx.beginPath();
+//     // this.ctx.moveTo(100, 100);
+//     // this.ctx.moveTo(x, y);
+//     // this.ctx.lineTo(x + length, y + length);
+//     // this.ctx.stroke();
+//   }
+//   animate() {
+//     console.log("animating");
+//     this.ctx.clearRect(0, 0, this.width, this.height);
+//     this.draw(100, 100);
+//     this.x += 1;
+//     instanceAnimation = requestAnimationFrame(this.animate.bind(this));
+//   }
+// }
+
 export default function Performance() {
   const section1Ref: any = useRef(null);
   const section2Ref: any = useRef(null);
@@ -154,21 +156,29 @@ export default function Performance() {
   //   target: performanceRef,
   //   offset: ["start start", "end end"],
   // });
+
+  useEffect(() => {
+    // console.log({
+    //   section1: { opacity, scale1 },
+    //   section2: { opacity2, scale2 },
+    //   section3: { opacity3, x },
+    // });
+    const logValues = () => {
+      // console.log(`${section1Progress},${section2Progress},${section3Progress}`);
+      // console.log(`sec1[${opacity2},${scale2}]`)
+      // console.log(`sec1[${opacity3},${x}]`)
+    };
+    window.addEventListener("scroll", logValues);
+    // return window.removeEventListener("scroll", logValues);
+  }, []);
+
   return (
     <>
       <section className="performance" ref={section1Ref} style={{ height: "1000vh" }}>
-        <motion.div
-          className="nickname"
-          style={{
-            scale: scale1,
-            opacity,
-          }}
-        >
+        <motion.div className="nickname" style={{ scale: scale1, opacity }}>
           <h1>Youser</h1>
           <h1>Stack</h1>
         </motion.div>
-
-        {/* <canvas id="canvas" ref={canvasRef} width={1000} height={1000}></canvas> */}
       </section>
       <section className="performance" ref={section2Ref} style={{ height: "700vh" }}>
         <motion.div

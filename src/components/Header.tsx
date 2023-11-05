@@ -1,22 +1,32 @@
 "use client";
 import Link from "next/link";
-import "@/app/page.scss";
 import { motion, useMotionValue, useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
+import { SlMenu } from "react-icons/sl";
 
 export default function Header() {
-  const [hidden, setHidden]: any = useState(false);
+  const [isHidden, setIsHidden]: any = useState(false);
+  const [isClicked, setIsClicked]: any = useState(false);
   const { scrollY } = useScroll();
 
-  // MotionValueEvent가 scrollY의 값을 트랙킹(추적)한다.
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
     // console.log({ previous, latest });
+
     // scroll down : previous < latest
-    if (previous < latest && 100 < latest) setHidden(true);
+    if (previous < latest && 100 < latest) {
+      setIsClicked(false);
+      setIsHidden(true);
+    }
     // scroll up : previous > latest
-    else setHidden(false);
+    else setIsHidden(false);
   });
+
+  useEffect(() => {
+    const handleSetIsClicked = () => setIsClicked(false);
+    window.addEventListener("click", handleSetIsClicked);
+    return () => window.removeEventListener("click", handleSetIsClicked);
+  }, []);
 
   // useEffect(() => {
   //   const unsubscribe = scrollY.on("change", (latestValue: number) => console.log({ latestValue }));
@@ -31,16 +41,36 @@ export default function Header() {
             visible: { y: 0 },
           }}
           initial="hidden"
-          animate={hidden ? "hidden" : "visible"}
-          // animate="visible"
+          animate={isHidden ? "hidden" : "visible"}
           transition={{ duration: 0.5 }}
-          // scroll
+          onClick={(e) => e.stopPropagation()}
         >
-          <Link href={"/#home"}>Home</Link>
-          <Link href={"/#about"}>About</Link>
-          <Link href={"/#works"}>Works</Link>
-          <Link href={"/#contact"}>Contact</Link>
-          <Link href={"/#test"}>Test</Link>
+          <div className="nav-web">
+            <Link href={"/#home"}>Home</Link>
+            <Link href={"/#about"}>About</Link>
+            <Link href={"/#works"}>Works</Link>
+            <Link href={"/#contact"}>Contact</Link>
+            <Link href={"/#test"}>Test</Link>
+          </div>
+          <div className="nav-mobile">
+            <div
+              className="nav-mobile-hamburger-menu"
+              onClick={() => setIsClicked((state: any) => !state)}
+            >
+              <SlMenu />
+            </div>
+            <div className={`nav-mobile-menus-outer`}>
+              <div className={`nav-mobile-menus ${isClicked ? "active" : ""}`}>
+                <Link href={"/#home"}>Home</Link>
+                <Link href={"/#about"}>About</Link>
+                <Link href={"/#works"}>Works</Link>
+                <Link href={"/#contact"}>Contact</Link>
+                <Link href={"/#test"}>Test</Link>
+              </div>
+            </div>
+            {/* {isClicked && (
+            )} */}
+          </div>
         </motion.nav>
       </section>
     </header>
