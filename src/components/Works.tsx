@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+
 export default function Works() {
   // selected animation
   const [selectedId, setSelectedId] = useState(null);
-  // const [itemsIndex,setItemsIndex]=useState()
   const [selectedItem, setSelectedItem]: any = useState({});
   const items = [
     {
@@ -31,16 +31,13 @@ export default function Works() {
     setSelectedItem(foundItem);
     // console.log({ foundItem });
   }, [selectedId]);
-  useEffect(() => {
-    console.log({ selectedItem });
-  }, [selectedItem]);
   // useEffect(() => {
-  //   window.addEventListener("wheel", (e) => console.log(e));
-  // }, []);
+  //   console.log({ selectedItem });
+  // }, [selectedItem]);
+
   return (
     <section id="works" className="works">
       <h1>Works</h1>
-      {/* <h1>selectedId : {selectedId}</h1> */}
       <div className="items">
         {items.map((item: any, index: any) => (
           <motion.div

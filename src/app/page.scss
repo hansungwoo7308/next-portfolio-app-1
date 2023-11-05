@@ -26,7 +26,6 @@
   }
   .hero-content {
     width: 50%;
-    // border: 2px solid;
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -52,7 +51,6 @@
   }
 }
 .performance {
-  padding: 0;
   overflow-y: clip;
   // border: 2px solid yellow;
 
@@ -73,7 +71,7 @@
   .horizon {
     width: fit-content;
     height: 100vh;
-    // border: 2px solid coral;
+    // border: 2px solid red;
     display: flex;
     align-items: center;
     gap: 30rem;
@@ -171,36 +169,17 @@
   }
 }
 .works {
-  // > ul {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   gap: 1rem;
-  //   list-style: none;
-  //   > li {
-  //     width: 15rem;
-  //     height: 15rem;
-  //     border: 2px solid;
-  //     padding: 1rem;
-  //   }
-  // }
   .items {
-    height: 500px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-    // border: 2px solid;
-    padding: 1rem;
     position: relative;
-
     .item {
       width: 15rem;
       height: 15rem;
       border: 2px solid;
-      // padding: 1rem;
-      // place-self: flex-start;
-      // border: 2px solid green;
       border-radius: 10px;
       cursor: pointer;
       overflow: hidden;
