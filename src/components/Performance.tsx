@@ -72,8 +72,8 @@ export default function Performance() {
   const scale1 = useTransform(section1Progress, [0.2, 0.8], [1, 150]);
 
   // section 2
-  const opacity2 = useTransform(section2Progress, [0, 0.2], [0, 1]);
-  const scale2: any = useTransform(section2Progress, [0.2, 0.5], [3, 0.5]);
+  const opacity2 = useTransform(section2Progress, [0, 0.3], [0, 1]);
+  const scale2: any = useTransform(section2Progress, [0, 1], [3, 0.5]);
   const [scope, animate] = useAnimate();
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -88,8 +88,10 @@ export default function Performance() {
   // const y2 = useTransform(section2Progress, [0.5, 0.7], ["-200%", "0%"]);
 
   // section 3
-  const x = useTransform(section3Progress, [0, 0.5], ["50%", "-150%"]);
-  const opacity3 = useTransform(section3Progress, [0, 0.2, 0.4, 0.6], [0, 1, 1, 0]);
+  const x = useTransform(section3Progress, [0, 0.8], ["30%", "-120%"]);
+  // const x = useTransform(section3Progress, [0, 0.9], ["50%", "-200%"]);
+  const opacity3 = useTransform(section3Progress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  // const opacity3 = useTransform(section3Progress, [0, 0.2, 0.4, 0.6], [0, 1, 1, 0]);
 
   // const width = useTransform(scrollYProgress, [0, 1], ["200%", "-200%"]);
   // const x = useTransform(scrollYProgress, [0, 1], ["150%", "-150%"]);
@@ -222,7 +224,7 @@ export default function Performance() {
           </motion.div>
         </motion.div>
       </section>
-      <section className="performance" ref={section3Ref} style={{ height: "500vh" }}>
+      <section className="performance" ref={section3Ref} style={{ height: "1000vh" }}>
         <motion.div
           className="horizon"
           style={{
@@ -254,7 +256,6 @@ export default function Performance() {
             position: "sticky",
             top: "50%",
             translateY: "-50%",
-            // x,
             fontSize: 100,
             opacity: opacity3,
           }}

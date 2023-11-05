@@ -31,9 +31,9 @@ export default function Home() {
     <main>
       <Hero />
       <Performance />
-      {/* <About /> */}
-      {/* <Works /> */}
-      {/* <Contact /> */}
+      <About />
+      <Works />
+      <Contact />
 
       {/* <section id="contact" className="contact"></section> */}
       {/* <section id="test">

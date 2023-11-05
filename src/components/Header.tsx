@@ -3,6 +3,7 @@ import Link from "next/link";
 import { motion, useMotionValue, useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import { SlMenu } from "react-icons/sl";
+import { RiGlobalFill } from "react-icons/ri";
 
 export default function Header() {
   const [isHidden, setIsHidden]: any = useState(false);
@@ -53,10 +54,8 @@ export default function Header() {
             <Link href={"/#test"}>Test</Link>
           </div>
           <div className="nav-mobile">
-            <div
-              className="nav-mobile-hamburger-menu"
-              onClick={() => setIsClicked((state: any) => !state)}
-            >
+            <div className="nav-mobile-icons" onClick={() => setIsClicked((state: any) => !state)}>
+              <RiGlobalFill />
               <SlMenu />
             </div>
             <div className={`nav-mobile-menus-outer`}>
