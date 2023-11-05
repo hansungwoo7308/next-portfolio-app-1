@@ -256,7 +256,6 @@ export default function Performance() {
             position: "sticky",
             top: "50%",
             translateY: "-50%",
-            fontSize: 100,
             opacity: opacity3,
           }}
         >

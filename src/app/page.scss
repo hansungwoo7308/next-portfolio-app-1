@@ -44,7 +44,7 @@
       }
     }
   }
-  @media (width < 1000px) {
+  @media (width <= 1000px) {
     .hero-content {
       width: 100%;
       padding: 3rem;
@@ -141,6 +141,11 @@
       gap: 1rem;
       padding: 1rem;
     }
+    @media (max-width: 1000px) {
+      & {
+        flex-direction: column;
+      }
+    }
   }
   .middle {
     // border: 2px solid green;
@@ -152,12 +157,14 @@
     .stack {
       .stack-list {
         display: flex;
+        flex-wrap: wrap;
         // display: grid;
         // grid-template-columns: repeat(5, 5rem);
         gap: 3rem;
         // justify-content: center;
         // align-items: center;
         position: relative;
+        font-size: 3rem;
       }
       .additional-information {
       }
@@ -182,6 +189,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
     // border: 2px solid;
     padding: 1rem;

@@ -163,6 +163,8 @@ header {
         top: 100%;
         overflow: hidden;
 
+        pointer-events: none;
+
         .nav-mobile-menus {
           display: flex;
           flex-direction: column;
@@ -176,6 +178,8 @@ header {
           background-color: rgba(0, 0, 0, 0.7);
           backdrop-filter: blur(8px);
           border-radius: 10px;
+
+          pointer-events: initial;
         }
         .active {
           transform: translateY(0%);
@@ -276,6 +280,11 @@ footer {
       // border: 2px solid;
     }
   }
+  @media (max-width: 1000px) {
+    section {
+      flex-direction: column;
+    }
+  }
 }
 
 a {
@@ -301,17 +310,5 @@ button {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
-  }
-}
-
-@media (width < 1000px) {
-  main {
-    section {
-      > .wrapper {
-        > .left {
-          // width: 100%;
-        }
-      }
-    }
   }
 }

@@ -8,7 +8,8 @@ export default function Footer() {
     <footer>
       <section>
         <div className="left">
-          <h1 className="title">Youser Stack</h1>
+          <h1 className="title">Portfolio</h1>
+          <small>© 2023, youserstack. All rights reserved.</small>
           <div className="social">
             <SocialIcon className="icon" url="www.github.com" href="/#" style={size} />
             <SocialIcon className="icon" url="www.twitter.com" href="/#" style={size} />
