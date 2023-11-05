@@ -88,7 +88,7 @@ export default function Performance() {
   // const y2 = useTransform(section2Progress, [0.5, 0.7], ["-200%", "0%"]);
 
   // section 3
-  const x = useTransform(section3Progress, [0, 0.8], ["30%", "-120%"]);
+  const x = useTransform(section3Progress, [0, 0.8], ["100vw", "-150%"]);
   // const x = useTransform(section3Progress, [0, 0.9], ["50%", "-200%"]);
   const opacity3 = useTransform(section3Progress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
   // const opacity3 = useTransform(section3Progress, [0, 0.2, 0.4, 0.6], [0, 1, 1, 0]);

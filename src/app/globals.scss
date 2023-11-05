@@ -88,9 +88,6 @@ body {
   // overflow-x: clip;
 
   scroll-behavior: smooth;
-  // overflow-x: hidden;
-  // overflow-y: hidden;
-  // scroll-snap-type: y mandatory;
 }
 
 body {
@@ -196,7 +193,8 @@ header {
 main {
   // width: 100%;
   // width: 100vw;
-  overflow-x: clip;
+  // overflow-x: clip;
+  overflow: hidden;
 
   // margin: auto;
   display: flex;
@@ -206,15 +204,14 @@ main {
   // overflow-y: scroll;
   section {
     width: 100%;
-    max-width: 1000px;
     height: fit-content;
+    max-width: 1000px;
     min-height: 100vh;
-    // height: 100vh;
-    /* padding-top: 4rem; */
+
     padding: 5rem 1rem;
     margin: auto;
     border: 2px dashed;
-    scroll-snap-align: start;
+
     display: flex;
     flex-direction: column;
   }
