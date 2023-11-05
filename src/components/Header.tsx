@@ -60,11 +60,21 @@ export default function Header() {
             </div>
             <div className={`nav-mobile-menus-outer`}>
               <div className={`nav-mobile-menus ${isClicked ? "active" : ""}`}>
-                <Link href={"/#home"}>Home</Link>
-                <Link href={"/#about"}>About</Link>
-                <Link href={"/#works"}>Works</Link>
-                <Link href={"/#contact"}>Contact</Link>
-                <Link href={"/#test"}>Test</Link>
+                <Link href={"/#home"} onClick={() => setIsClicked(false)}>
+                  Home
+                </Link>
+                <Link href={"/#about"} onClick={() => setIsClicked(false)}>
+                  About
+                </Link>
+                <Link href={"/#works"} onClick={() => setIsClicked(false)}>
+                  Works
+                </Link>
+                <Link href={"/#contact"} onClick={() => setIsClicked(false)}>
+                  Contact
+                </Link>
+                <Link href={"/#test"} onClick={() => setIsClicked(false)}>
+                  Test
+                </Link>
               </div>
             </div>
             {/* {isClicked && (

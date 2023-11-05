@@ -211,7 +211,7 @@ export default function Performance() {
               // y: y2,
               // marginTop: "5rem",
               textAlign: "center",
-              fontSize: 70,
+              fontSize: "1rem",
               // pointerEvents: "none",
             }}
             initial={{
