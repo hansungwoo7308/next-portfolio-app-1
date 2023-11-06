@@ -51,9 +51,6 @@
   }
 }
 .performance {
-  // overflow-y: clip;
-  // border: 2px solid yellow;
-
   .nickname {
     height: 100vh;
     position: sticky;
@@ -69,7 +66,8 @@
     }
   }
   .horizon {
-    width: fit-content;
+    // width: fit-content;
+    width: max-content;
     // height: 100vh;
     border: 2px solid red;
     display: flex;
@@ -90,6 +88,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     // border: 2px solid red;
   }
   // canvas {

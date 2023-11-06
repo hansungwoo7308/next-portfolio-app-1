@@ -97,10 +97,13 @@ body {
 }
 
 header {
-  width: 100vw;
+  // width: 100vw;
   position: fixed;
+  left: 0;
+  right: 0;
   font-size: 1rem;
   z-index: 100;
+
   section {
     max-width: 1000px;
     height: 100%;
@@ -195,6 +198,7 @@ main {
   // width: 100vw;
   // overflow-x: clip;
   // overflow: hidden;
+  overflow-x: clip;
 
   // margin: auto;
   display: flex;

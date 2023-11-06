@@ -183,16 +183,7 @@ export default function Performance() {
         </motion.div> */}
       </section>
       <section className="performance" ref={section2Ref} style={{ height: "700vh" }}>
-        <motion.div
-          className="sticky-box"
-          style={{
-            scale: scale2,
-            position: "sticky",
-            top: 0,
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
+        <motion.div className="sticky-box" style={{ scale: scale2, position: "sticky", top: 0 }}>
           <motion.div
             style={{
               opacity: opacity2,
@@ -206,18 +197,8 @@ export default function Performance() {
           </motion.div>
           <motion.div
             ref={scope}
-            style={{
-              // opacity: opacity2,
-              // y: y2,
-              // marginTop: "5rem",
-              textAlign: "center",
-              fontSize: "1rem",
-              // pointerEvents: "none",
-            }}
-            initial={{
-              opacity: 0,
-              translateY: "-200%",
-            }}
+            style={{ textAlign: "center", fontSize: "1rem" }}
+            initial={{ opacity: 0, translateY: "-200%" }}
             // whileInView={{ opacity: 1, translateY: 0 }}
           >
             <h1>Direction</h1>
