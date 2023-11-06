@@ -54,11 +54,15 @@ export default function Header() {
             <Link href={"/#test"}>Test</Link>
           </div>
           <div className="nav-mobile">
-            <div className="nav-mobile-icons" onClick={() => setIsClicked((state: any) => !state)}>
-              <RiGlobalFill />
-              <SlMenu />
+            <div className="nav-mobile-icons">
+              <div className="logo">
+                <RiGlobalFill />
+              </div>
+              <div className="hamburger" onClick={() => setIsClicked((state: any) => !state)}>
+                <SlMenu />
+              </div>
             </div>
-            <div className={`nav-mobile-menus-outer`}>
+            <div className="nav-mobile-menus-outer">
               <div className={`nav-mobile-menus ${isClicked ? "active" : ""}`}>
                 <Link href={"/#home"} onClick={() => setIsClicked(false)}>
                   Home
@@ -77,8 +81,6 @@ export default function Header() {
                 </Link>
               </div>
             </div>
-            {/* {isClicked && (
-            )} */}
           </div>
         </motion.nav>
       </section>

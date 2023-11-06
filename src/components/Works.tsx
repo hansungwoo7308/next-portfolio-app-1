@@ -36,7 +36,9 @@ export default function Works() {
 
   return (
     <section id="works" className="works">
-      <h1>Works</h1>
+      <div className="works-title">
+        <h1>Works</h1>
+      </div>
       <div className="works-items" ref={itemsRef}>
         {items.map((item: any, index: any) => (
           <motion.div
@@ -45,7 +47,7 @@ export default function Works() {
             className="works-item"
             layoutId={item.id}
             onClick={(e: any) => setSelectedId(item.id)}
-            transition={{ duration: 3 }}
+            // transition={{ duration: 3 }}
             // style={{ zIndex: item.id === selectedId ? "1000" : "" }}
           >
             <motion.div className="works-item-image-outer">
@@ -57,6 +59,8 @@ export default function Works() {
           </motion.div>
         ))}
       </div>
+
+      {/* Opened Item */}
       <div
         className="works-opened-item-background"
         style={{ display: `${selectedId ? "block" : "none"}` }}
@@ -69,7 +73,7 @@ export default function Works() {
                 className="works-opened-item"
                 layoutId={selectedId}
                 onClick={(e) => e.stopPropagation()}
-                transition={{ duration: 3 }}
+                // transition={{ duration: 3 }}
                 // exit={{ opacity: 0 }}
               >
                 <motion.div className="works-item-image-outer">
