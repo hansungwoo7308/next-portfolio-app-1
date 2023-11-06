@@ -221,21 +221,26 @@ main {
 
 footer {
   min-height: 50vh;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/town.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+
   section {
     max-width: 1000px;
     height: 100%;
     margin: auto;
     margin-top: 1rem;
+
     display: flex;
     justify-content: space-between;
-    // border: 2px dashed;
     padding: 2rem;
+    // border: 2px dashed;
+    // border: 2px solid blue;
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("/images/town.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
     .left {
       display: flex;
       flex-direction: column;
