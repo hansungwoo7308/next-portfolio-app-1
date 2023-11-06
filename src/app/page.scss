@@ -2,14 +2,12 @@
   align-items: center;
 }
 .hero {
-  // min-width: 100vw;
-  max-width: initial;
+  max-width: none;
   background-image: 
     // linear-gradient
     linear-gradient(to bottom, black 2%, transparent, transparent, transparent, black 90%),
     // url
     url("/images/street.jpg");
-  // background-color: white;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -66,8 +64,7 @@
     }
   }
   .horizon {
-    // width: fit-content;
-    width: max-content;
+    width: fit-content;
     // height: 100vh;
     border: 2px solid red;
     display: flex;
