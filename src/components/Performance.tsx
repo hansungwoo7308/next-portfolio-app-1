@@ -207,7 +207,7 @@ export default function Performance() {
       </section>
       <section className="performance" ref={section3Ref} style={{ height: "1000vh" }}>
         <motion.div
-          className="horizon"
+          className="slider"
           style={{
             height: "100vh",
             position: "sticky",
