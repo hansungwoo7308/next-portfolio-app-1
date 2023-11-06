@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
     <section className="contact">
-      <div className="left">
+      <div className="contact-form-outer">
         <form action="">
           <input type="text" placeholder="Your name" />
           <input type="email" placeholder="Your email" />
@@ -17,7 +17,7 @@ export default function Contact() {
           <button>Submit</button>
         </form>
       </div>
-      <div className="right">
+      <div className="contact-description">
         <h1>Another ways to contact</h1>
         <p>Kakao ID : wooky7308 </p>
         <p>Kakao Open Talk : </p>

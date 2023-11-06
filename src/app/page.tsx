@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Performance />
+      {/* <Performance /> */}
       <About />
       <Works />
       <Contact />

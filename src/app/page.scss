@@ -261,15 +261,15 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  .left,
-  .right {
+  .contact-form-outer,
+  .contact-description {
+    width: 300px;
     max-width: 100%;
     border: 1px solid;
     border-radius: 10px;
     padding: 1rem;
     // place-self: start;
   }
-
   form {
     // width: 50%;
     display: flex;
@@ -395,26 +395,3 @@
     user-select: none;
   }
 }
-
-// .background {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   bottom: 0;
-//   width: 300px;
-//   background: #fff;
-// }
-// .add-item {
-//   width: 30px;
-//   height: 30px;
-//   background: #eee;
-//   border-radius: 50%;
-//   border: 0;
-//   cursor: pointer;
-//   align-self: center;
-// }
-// .add-item:disabled {
-//   opacity: 0.4;
-//   cursor: default;
-//   pointer-events: none;
-// }
