@@ -27,10 +27,12 @@ export default function About() {
 
   return (
     <section id="about" className="about">
-      <motion.div className="about-image-outer" {...options}>
-        <Image src={"/images/profile.JPG"} alt="profile" width={300} height={300} />
-      </motion.div>
-      <motion.div className="about-text" {...options}>
+      {/* <motion.div className="profile-image" {...options}>
+      </motion.div> */}
+      <motion.div {...options}>
+        <div className="profile-image">
+          <Image src={"/images/profile.JPG"} alt="profile" width={300} height={300} />
+        </div>
         <div className="title">
           <h1>About Me</h1>
           <small>youserstack</small>
@@ -43,7 +45,7 @@ export default function About() {
           </p>
         </div>
       </motion.div>
-      <motion.div className="about-text" {...options}>
+      <motion.div {...options}>
         <div className="title">
           <h1>Stack</h1>
         </div>
@@ -59,7 +61,7 @@ export default function About() {
           <SiCss3 />
         </div>
       </motion.div>
-      <motion.div className="about-text" {...options}>
+      <motion.div {...options}>
         <div className="title">
           <h1>Additional Information</h1>
         </div>

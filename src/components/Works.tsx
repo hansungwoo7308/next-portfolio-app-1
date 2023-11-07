@@ -38,7 +38,7 @@ export default function Works() {
 
   return (
     <section className="works">
-      <div className="works-title">
+      <div className="title">
         <h1>Works</h1>
       </div>
       <div className="works-items" ref={itemsRef}>

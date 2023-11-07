@@ -20,7 +20,7 @@
     max-width: 1000px;
     height: 100%;
     margin: auto;
-    border: 2px dashed;
+    // border: 2px dashed;
     display: flex;
     align-items: center;
   }
@@ -109,44 +109,39 @@
   // }
 }
 .about {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
   > div {
-    border: 1px solid;
+    // border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .about-image-outer {
+  .profile-image {
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid;
     margin: auto;
-    // border: 2px solid coral;
-    // transition: opacity 3s;
+    margin-bottom: 2rem;
   }
-  .about-text {
-    display: flex;
-    flex-direction: column;
-    // align-items: center;
-    gap: 1rem;
-    .title {
-      text-align: center;
-    }
-    .icons {
-      width: 100%;
-      display: grid;
-      /* 열의 최소 너비는 3rem이며, 뷰포트에 맞게 조정됩니다. */
-      grid-template-columns: repeat(3, 3rem);
-      // grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
-      justify-content: center;
-      gap: 4rem;
-      padding: 1rem;
-      svg {
-        width: 3rem;
-        height: 3rem;
-        margin: auto;
-      }
+  .title {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .icons {
+    // width: 100%;
+    display: grid;
+    /* 열의 최소 너비는 3rem이며, 뷰포트에 맞게 조정됩니다. */
+    // grid-template-columns: repeat(auto-fill, minmax(3rem, 1fr));
+    grid-template-columns: repeat(3, minmax(3rem, 5rem));
+    justify-content: center;
+    gap: 4rem;
+    padding: 1rem;
+    svg {
+      width: 3rem;
+      height: 3rem;
+      margin: auto;
     }
   }
 
@@ -158,17 +153,12 @@
   }
 }
 .works {
-  .works-title {
-    text-align: center;
-  }
   .works-items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 15rem));
     justify-content: center;
     gap: 1rem;
     position: relative;
-
-    align-self: normal;
 
     // border: 1px solid red;
     .works-item {

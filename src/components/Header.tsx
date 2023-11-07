@@ -55,7 +55,7 @@ export default function Header() {
           </div>
           <div className="nav-mobile">
             <div className="nav-mobile-icons">
-              <Link className="logo" href={"/"}>
+              <Link className="logo" href={"/"} onClick={() => setIsClicked(false)}>
                 <RiGlobalFill />
               </Link>
               <div className="hamburger" onClick={() => setIsClicked((state: any) => !state)}>
