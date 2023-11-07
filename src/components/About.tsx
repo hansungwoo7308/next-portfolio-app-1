@@ -14,15 +14,6 @@ import {
 } from "react-icons/si";
 
 export default function About() {
-  const ref: any = useRef(null);
-  const isInView = useInView(ref);
-  const animation = {
-    opacity: isInView ? "1" : "0",
-    transform: isInView ? "none" : "translateY(30px)",
-    transition: "all 1s",
-    // transform: isInView ? "none" : "translateX(-200px)",
-  };
-
   const somethingVariants: Variants = {
     offscreen: { y: 30, opacity: 0 },
     onscreen: { y: 0, opacity: 1, transition: { duration: 1, ease: "easeInOut" } },
@@ -36,14 +27,7 @@ export default function About() {
 
   return (
     <section id="about" className="about">
-      <motion.div
-        className="about-image-outer"
-        {...options}
-        // variants={somethingVariants}
-        // initial="offscreen"
-        // whileInView="onscreen"
-        // transition={{ duration: 1 }}
-      >
+      <motion.div className="about-image-outer" {...options}>
         <Image src={"/images/profile.JPG"} alt="profile" width={300} height={300} />
       </motion.div>
       <motion.div className="about-text" {...options}>

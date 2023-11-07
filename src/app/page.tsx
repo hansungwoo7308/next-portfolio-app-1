@@ -1,6 +1,6 @@
 "use client";
 import "@/app/page.scss";
-import Test from "@/components/Test";
+// import Test from "@/components/Test";
 
 import Hero from "@/components/Hero";
 import Performance from "@/components/Performance";
@@ -34,17 +34,6 @@ export default function Home() {
       <About />
       <Works />
       <Contact />
-
-      {/* <section id="contact" className="contact"></section> */}
-      {/* <section id="test">
-        <Test />
-      </section> */}
-      {/* <li>
-              <SocialIcon url="www.facebook.com" bgColor="transparent" />
-            </li>
-            <li>
-              <SocialIcon url="www.github.com" bgColor="transparent" />
-            </li> */}
     </main>
   );
 }
