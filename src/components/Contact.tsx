@@ -1,8 +1,11 @@
 export default function Contact() {
   return (
     <section className="contact">
+      <div className="title">
+        <h1>Contact</h1>
+      </div>
       <div className="contact-form-outer">
-        <form action="">
+        <form>
           <input type="text" placeholder="Your name" />
           <input type="email" placeholder="Your email" />
           <input type="tel" placeholder="Your phone number" />

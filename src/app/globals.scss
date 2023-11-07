@@ -218,6 +218,9 @@ main {
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
   }
 }
 
@@ -229,6 +232,8 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  -webkit-background-attachment: fixed;
+
   section {
     max-width: 1000px;
     height: 100%;

@@ -55,9 +55,9 @@ export default function Header() {
           </div>
           <div className="nav-mobile">
             <div className="nav-mobile-icons">
-              <div className="logo">
+              <Link className="logo" href={"/"}>
                 <RiGlobalFill />
-              </div>
+              </Link>
               <div className="hamburger" onClick={() => setIsClicked((state: any) => !state)}>
                 <SlMenu />
               </div>

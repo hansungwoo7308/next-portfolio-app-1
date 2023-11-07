@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const DATASET = [
   {
@@ -36,7 +37,7 @@ export default function Works() {
   }, [selectedId]);
 
   return (
-    <section id="works" className="works">
+    <section className="works">
       <div className="works-title">
         <h1>Works</h1>
       </div>
@@ -73,6 +74,7 @@ export default function Works() {
               onClick={(e) => e.stopPropagation()}
               // transition={{ duration: 2 }}
             >
+              <button onClick={(e: any) => setSelectedId(null)}>X</button>
               <div className="works-item-image-outer">
                 <Image
                   src={selectedItem?.url || "/images/town.jpg"}
@@ -82,15 +84,25 @@ export default function Works() {
                 />
               </div>
               <div className="works-item-content">
-                <h3>{selectedItem?.title}</h3>
+                <div className="title">
+                  <h3>{selectedItem?.title}</h3>
+                </div>
                 <ul className="stack">
+                  <p>Stack :</p>
                   {selectedItem?.stack.map((v: any) => (
                     <li key={v}>{v}</li>
                   ))}
                 </ul>
-                <p>{selectedItem?.description}</p>
+                <div className="description">
+                  <p>Description :</p>
+                  <p>{selectedItem?.description}</p>
+                </div>
+                <div className="webpage-link">
+                  <Link href={"https://next-commerce-app-psi.vercel.app/"} target="_blank">
+                    Go to website
+                  </Link>
+                </div>
               </div>
-              <button onClick={(e: any) => setSelectedId(null)}>X</button>
             </motion.div>
           )}
         </AnimatePresence>
