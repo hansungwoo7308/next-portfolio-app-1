@@ -29,9 +29,9 @@ export default function Home() {
   // }, []);
   return (
     <main>
-      {/* <Hero /> */}
+      <Hero />
       {/* <Performance /> */}
-      {/* <About /> */}
+      <About />
       <Works />
       <Contact />
     </main>
