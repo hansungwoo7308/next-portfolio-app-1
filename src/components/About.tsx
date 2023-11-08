@@ -27,10 +27,8 @@ export default function About() {
 
   return (
     <section id="about" className="about">
-      {/* <motion.div className="profile-image" {...options}>
-      </motion.div> */}
       <motion.div {...options}>
-        <div className="profile-image">
+        <div className="image">
           <Image src={"/images/profile.JPG"} alt="profile" width={300} height={300} />
         </div>
         <div className="title">
