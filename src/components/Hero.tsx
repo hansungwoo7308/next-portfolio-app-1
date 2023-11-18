@@ -1,6 +1,7 @@
 import { useAnimate, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   // hero section
@@ -31,10 +32,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <motion.section className="hero" ref={heroRef} style={{ opacity }}>
+    <motion.section id="hero" className="hero" ref={heroRef} style={{ opacity }}>
       <div className="hero-inner">
         <motion.div className="hero-content" ref={scope}>
-          <h1>Youser Stack</h1>
+          <h1>youserstack</h1>
           <small>Front End Developer</small>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. At ullam labore pariatur
@@ -42,14 +43,16 @@ export default function Hero() {
             iusto! Quasi qui unde vero fugiat architecto.
           </p>
           <p>
-            Simple Design
+            Simple and Clear
             <br />
             Client-Focused
             <br />
-            Flexible
+            Flexible and Responsive
             <br />
           </p>
-          <button>something</button>
+          <Link href="/#contact" className="hero-button">
+            Contact
+          </Link>
         </motion.div>
       </div>
     </motion.section>

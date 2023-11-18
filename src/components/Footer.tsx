@@ -20,7 +20,7 @@ export default function Footer() {
           <h1>Index</h1>
           <ul>
             <li>
-              <Link href={"/"}>Home</Link>
+              <Link href={"/#hero"}>Home</Link>
             </li>
             <li>
               <Link href={"/#about"}>About</Link>
