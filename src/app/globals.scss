@@ -85,12 +85,6 @@ body {
   scroll-behavior: smooth;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
-    rgb(var(--background-start-rgb));
-}
-
 header {
   position: fixed;
   left: 0;
@@ -196,7 +190,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 70vh;
-  margin-bottom: 5rem;
+  padding-bottom: 5rem;
 
   background-image: 
     // linear-gradient
@@ -240,7 +234,7 @@ main {
 footer {
   min-height: 50vh;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("/images/town.jpg");
+    url("/images/pawel-czerwinski-tVl3JdAO4Ac-unsplash.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -251,7 +245,6 @@ footer {
     max-width: 1000px;
     height: 100%;
     margin: auto;
-    margin-top: 1rem;
 
     display: flex;
     justify-content: space-between;
