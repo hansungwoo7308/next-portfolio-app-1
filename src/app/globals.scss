@@ -197,6 +197,22 @@ main {
   align-items: center;
   gap: 70vh;
   margin-bottom: 5rem;
+
+  background-image: 
+    // linear-gradient
+    linear-gradient(to bottom, black 2%, transparent, transparent, transparent, black 90%),
+    // url
+    url("/images/brandon-vazquez-koC5eG6v6ew-unsplash.jpg");
+  // url("/images/luisa-denu-tq_dttGMPx0-unsplash.jpg");
+  // url("/images/omar-flores-lQT_bOWtysE-unsplash.jpg");
+  // url("/images/pawel-czerwinski-tVl3JdAO4Ac-unsplash.jpg");
+  // url("/images/test.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-background-attachment: fixed;
+
   section {
     // size
     width: 100%;

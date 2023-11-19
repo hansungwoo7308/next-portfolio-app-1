@@ -7,7 +7,6 @@ import {
   SiFramer,
   SiMongodb,
   SiNextdotjs,
-  SiPaypal,
   SiRedux,
   SiSass,
   SiStyledcomponents,
@@ -41,7 +40,9 @@ const DATASET = [
         icon: <SiTypescript />,
       },
     ],
-    description: "Full Stack으로 이루어진 프로젝트입니다.",
+    description:
+      "이커머스 프로젝트입니다. 로그인, 검색, 장바구니, 결제, 주문목록확인 기능이 있습니다.\n\n" +
+      "관리자 권한으로 로그인하면 제품을 추가하거나 삭제하는 기능을 이용할 수 있습니다.\n",
     url: "/images/next-commerce-app-screenshot.png",
   },
   {
@@ -65,7 +66,7 @@ const DATASET = [
         icon: <SiFramer />,
       },
     ],
-    description: "One Page로 이루어진 프로젝트입니다.",
+    description: "하나의 페이지로 이루어진 프로젝트입니다.",
     url: "/images/next-commerce-app-screenshot.png",
   },
   {
@@ -156,21 +157,8 @@ export default function Works() {
                 </div>
                 <div>
                   <p>Description</p>
-                  <p>{selectedItem?.description}</p>
+                  <pre>{selectedItem?.description}</pre>
                 </div>
-                <div></div>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam dicta,
-                  consequuntur officiis tempore recusandae error, doloremque eaque numquam
-                  excepturi, explicabo atque dignissimos sunt fugiat quas aliquid. Deserunt, optio!
-                  Reiciendis, corporis. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Magnam dicta, consequuntur officiis tempore recusandae error, doloremque eaque
-                  numquam excepturi, explicabo atque dignissimos sunt fugiat quas aliquid. Deserunt,
-                  optio! Reiciendis, corporis. Lorem ipsum dolor, sit amet consectetur adipisicing
-                  elit. Magnam dicta, consequuntur officiis tempore recusandae error, doloremque
-                  eaque numquam excepturi, explicabo atque dignissimos sunt fugiat quas aliquid.
-                  Deserunt, optio! Reiciendis, corporis.
-                </p>
               </div>
             </motion.div>
           )}

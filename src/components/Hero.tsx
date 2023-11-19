@@ -36,7 +36,7 @@ export default function Hero() {
       <div className="hero-inner">
         <motion.div className="hero-content" ref={scope}>
           <h1>youserstack</h1>
-          <small>Front End Developer</small>
+          <small>Front-end Developer</small>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. At ullam labore pariatur
             repudiandae? Nihil repellat deserunt vel molestiae veritatis culpa quia, mollitia quae
@@ -50,8 +50,8 @@ export default function Hero() {
             Flexible and Responsive
             <br />
           </p>
-          <Link href="/#contact" className="hero-button">
-            Contact
+          <Link href="/#about" className="hero-button">
+            Explore
           </Link>
         </motion.div>
       </div>
