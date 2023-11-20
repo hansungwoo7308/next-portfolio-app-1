@@ -37,24 +37,21 @@ export default function Header() {
     <header>
       <section className="section">
         <motion.nav
-          variants={{
-            hidden: { y: "-200%" },
-            visible: { y: 0 },
-          }}
+          variants={navVariants}
           initial="hidden"
           animate={isHidden ? "hidden" : "visible"}
           transition={{ duration: 0.5 }}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="nav-web">
+          <div className="nav WEB">
             <Link href={"/#home"}>Home</Link>
             <Link href={"/#about"}>About</Link>
             <Link href={"/#works"}>Works</Link>
             <Link href={"/#contact"}>Contact</Link>
             <Link href={"/#test"}>Test</Link>
           </div>
-          <div className="nav-mobile">
-            <div className="nav-mobile-icons">
+          <div className="nav MOBILE">
+            <div className="logo-and-hamburger">
               <Link className="logo" href={"/"} onClick={() => setIsClicked(false)}>
                 <RiGlobalFill />
               </Link>
@@ -62,8 +59,8 @@ export default function Header() {
                 <SlMenu />
               </div>
             </div>
-            <div className="nav-mobile-menus-outer">
-              <div className={`nav-mobile-menus ${isClicked ? "active" : ""}`}>
+            <div className="menu-outer">
+              <div className={`menu ${isClicked ? "unfold" : ""}`}>
                 <Link href={"/#home"} onClick={() => setIsClicked(false)}>
                   Home
                 </Link>
@@ -87,3 +84,8 @@ export default function Header() {
     </header>
   );
 }
+
+const navVariants = {
+  hidden: { y: "-200%" },
+  visible: { y: 0 },
+};

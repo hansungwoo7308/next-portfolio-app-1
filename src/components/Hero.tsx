@@ -11,53 +11,26 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const heroContentVariants: Variants = {
-  visible: {
-    transition: {
-      delayChildren: 0.5,
-      staggerChildren: 0.1,
-    },
-  },
-  // offscreen: {
-  //   transition: {
-  //     delayChildren: 0.5,
-  //     staggerChildren: 0.1,
-  //     staggerDirection: -1,
-  //   },
-  // },
-};
-
-const heroContentChildVariants = {
-  hidden: { y: 50, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { duration: 0.5 },
-  },
-  // offscreen: { y: -50, opacity: 0, transition: { duration: 1 } },
-};
-
 export default function Hero() {
+  // hero section
   const heroSectionRef: any = useRef(null);
-  const heroContentRef: any = useRef(null);
-
   const { scrollYProgress }: any = useScroll({
     target: heroSectionRef,
     offset: ["start start", "end start"],
   });
-
   const opacity: any = useTransform(scrollYProgress, [0, 1], [1, 0]);
+
+  // hero content
+  const heroContentRef: any = useRef(null);
+
   // const y: any = useTransform(scrollYProgress, [0, 1], ["0px", "-300px"]);
-
   // const [scope, animate]: any = useAnimate();
-  const isInView = useInView(heroContentRef, {
-    // margin: "-500px 0px 0px -20px",
-    // viewport에 해당요소가 90퍼센트가 보이면 true
-    // amount: 0.9,
-  });
-
+  // const isInView = useInView(heroContentRef, {
+  //   // margin: "-500px 0px 0px -20px",
+  //   // viewport에 해당요소가 90퍼센트가 보이면 true
+  //   // amount: 0.9,
+  // });
   // useMotionValueEvent(scrollYProgress, "change", (latest) => console.log({ latest }));
-
   // useEffect(() => {
   //   window.addEventListener("scroll", () => {
   //     if (window.scrollY <= 200) {
@@ -75,23 +48,22 @@ export default function Hero() {
   //     );
   //   });
   // }, []);
-
-  useEffect(() => {
-    console.log({ isInView });
-    // if (!isInView) {
-    //   animate(
-    //     heroContentRef.current.children,
-    //     { opacity: 0, translateY: "-50px" },
-    //     { duration: 2, delay: stagger(0.2) }
-    //   );
-    // } else {
-    //   animate(
-    //     heroContentRef.current.children,
-    //     { opacity: 1, translateY: "0" },
-    //     { duration: 2, delay: stagger(0.2) }
-    //   );
-    // }
-  }, [isInView]);
+  // useEffect(() => {
+  //   console.log({ isInView });
+  //   // if (!isInView) {
+  //   //   animate(
+  //   //     heroContentRef.current.children,
+  //   //     { opacity: 0, translateY: "-50px" },
+  //   //     { duration: 2, delay: stagger(0.2) }
+  //   //   );
+  //   // } else {
+  //   //   animate(
+  //   //     heroContentRef.current.children,
+  //   //     { opacity: 1, translateY: "0" },
+  //   //     { duration: 2, delay: stagger(0.2) }
+  //   //   );
+  //   // }
+  // }, [isInView]);
 
   return (
     <motion.section id="hero" className="hero" ref={heroSectionRef} style={{ opacity }}>
@@ -102,7 +74,6 @@ export default function Hero() {
         initial="hidden"
         whileInView="visible"
         viewport={{ amount: 0.8 }}
-        // whileInView={isInView ? "onscreen" : "offscreen"}
       >
         <motion.h1 variants={heroContentChildVariants}>youserstack</motion.h1>
         <motion.small variants={heroContentChildVariants}>Front-end Developer</motion.small>
@@ -123,3 +94,13 @@ export default function Hero() {
     </motion.section>
   );
 }
+
+const heroContentVariants: Variants = {
+  visible: { transition: { delayChildren: 0.5, staggerChildren: 0.1 } },
+};
+
+const heroContentChildVariants: Variants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
+  // offscreen: { y: -50, opacity: 0, transition: { duration: 1 } },
+};
