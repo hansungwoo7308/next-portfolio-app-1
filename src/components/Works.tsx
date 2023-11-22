@@ -17,7 +17,7 @@ const DATASET = [
   {
     id: "E-commerce Next App",
     title: "E-commerce Next App",
-    // stack: ["nextjs", "redux", "mongodb", "styled-components", "typescript"],
+    url: "https://res.cloudinary.com/dzktdrw7o/image/upload/v1700616927/next-portfolio-app/screenshot/24ce11fc-bf82-44ec-804c-b1bb2f2a08fc_rcjnvl.png",
     stack: [
       {
         name: "nextjs",
@@ -43,15 +43,19 @@ const DATASET = [
     description:
       "이커머스 프로젝트입니다. 로그인, 검색, 장바구니, 결제, 주문목록확인 기능이 있습니다.\n\n" +
       "관리자 권한으로 로그인하면 제품을 추가하거나 삭제하는 기능을 이용할 수 있습니다.\n",
-    url: "/images/next-commerce-app-screenshot.png",
   },
   {
     id: "Portfolio",
     title: "Portfolio",
+    url: "https://res.cloudinary.com/dzktdrw7o/image/upload/v1700617028/next-portfolio-app/screenshot/91f992e0-9560-41ad-a899-812104acf4d9_df1ooc.png",
     stack: [
       {
         name: "nextjs",
         icon: <SiNextdotjs />,
+      },
+      {
+        name: "framer-motion",
+        icon: <SiFramer />,
       },
       {
         name: "scss",
@@ -61,13 +65,8 @@ const DATASET = [
         name: "typescript",
         icon: <SiTypescript />,
       },
-      {
-        name: "framer-motion",
-        icon: <SiFramer />,
-      },
     ],
     description: "하나의 페이지로 이루어진 프로젝트입니다.",
-    url: "/images/next-commerce-app-screenshot.png",
   },
   {
     id: "Next App",

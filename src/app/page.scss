@@ -36,7 +36,7 @@
       padding: 1rem;
       cursor: pointer;
       border: none;
-      transition: all 0.5s;
+      transition: background-color 0.5s;
       border-radius: 10px;
       background-color: rgba(0, 128, 0, 0.7);
       &:hover {
@@ -251,8 +251,8 @@
       flex-direction: column;
 
       .works-item-image-outer {
-        flex: 1;
-        max-height: 200px;
+        flex: 4;
+        // max-height: 200px;
         position: relative;
         overflow: hidden;
 
@@ -324,6 +324,9 @@
     .works-opened-item-background {
       .works-opened-item {
         width: 100%;
+        .works-item-image-outer {
+          flex: 1;
+        }
       }
     }
   }
