@@ -133,7 +133,7 @@
     height: 10rem;
     border-radius: 50%;
     overflow: hidden;
-    border: 3px solid;
+    border: 3px solid #424242;
     margin: auto;
   }
 
@@ -194,11 +194,11 @@
       // position: relative;
       margin: auto;
 
-      border: 1px solid;
+      border: 1px solid #424242;
       border-radius: 10px;
       cursor: pointer;
       overflow: hidden;
-      background-color: rgb(27, 30, 37);
+      background-color: #212121;
 
       display: flex;
       flex-direction: column;
@@ -211,6 +211,12 @@
       .works-item-content {
         height: 50%;
         padding: 1rem;
+
+        .icons {
+          margin-top: 1rem;
+          display: flex;
+          gap: 1rem;
+        }
       }
 
       img {
@@ -241,9 +247,9 @@
       position: relative;
       margin: 1rem;
 
-      border: 1px solid;
+      border: 1px solid #424242;
       border-radius: 20px;
-      background-color: rgb(27, 30, 37);
+      background-color: #212121;
       overflow: hidden;
       // border: 1px solid red;
 
@@ -267,7 +273,8 @@
           border-radius: 50%;
           border: none;
           cursor: pointer;
-          background-color: rgba(0, 0, 0, 0.7);
+          background-color: #212121;
+          color: #fff;
 
           display: flex;
           justify-content: center;
@@ -284,9 +291,10 @@
           right: 1rem;
           padding: 1rem;
           border-radius: 5px;
-          background-color: rgba(0, 0, 0, 0.7);
+          background-color: #1b5e20;
           &:hover {
-            color: coral;
+            background-color: #000;
+            color: #fff;
           }
         }
       }
@@ -299,7 +307,7 @@
         flex-direction: column;
         gap: 1rem;
         overflow-x: hidden;
-        overflow-y: scroll;
+        overflow-y: auto;
 
         .stack {
           display: flex;
@@ -340,12 +348,12 @@
   .contact-description {
     width: 500px;
     max-width: 100%;
-    border: 1px solid;
+    border: 1px solid #424242;
     border-radius: 10px;
     padding: 1rem;
     // place-self: start;
 
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #212121;
   }
 
   .contact-form-outer {

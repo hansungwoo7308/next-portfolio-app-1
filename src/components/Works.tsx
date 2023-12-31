@@ -17,7 +17,10 @@ const DATASET = [
   {
     id: "E-commerce Next App",
     title: "E-commerce Next App",
-    url: "https://res.cloudinary.com/dzktdrw7o/image/upload/v1700616927/next-portfolio-app/screenshot/24ce11fc-bf82-44ec-804c-b1bb2f2a08fc_rcjnvl.png",
+    image: {
+      url: "https://res.cloudinary.com/dzktdrw7o/image/upload/v1703940724/next-portfolio-app/screenshot/d632648b-f622-443e-8d13-86055678ce72_qymjpy.png",
+    },
+    // url: "https://res.cloudinary.com/dzktdrw7o/image/upload/v1700616927/next-portfolio-app/screenshot/24ce11fc-bf82-44ec-804c-b1bb2f2a08fc_rcjnvl.png",
     stack: [
       {
         name: "nextjs",
@@ -41,13 +44,18 @@ const DATASET = [
       },
     ],
     description:
-      "이커머스 프로젝트입니다. 로그인, 검색, 장바구니, 결제, 주문목록확인 기능이 있습니다.\n\n" +
+      "이커머스 프로젝트입니다. 로그인, 검색, 장바구니, 결제, 주문목록확인 기능이 있고,\n" +
       "관리자 권한으로 로그인하면 제품을 추가하거나 삭제하는 기능을 이용할 수 있습니다.\n",
+    web: {
+      url: "https://next-commerce-app-psi.vercel.app/",
+    },
   },
   {
     id: "Portfolio",
     title: "Portfolio",
-    url: "https://res.cloudinary.com/dzktdrw7o/image/upload/v1700617028/next-portfolio-app/screenshot/91f992e0-9560-41ad-a899-812104acf4d9_df1ooc.png",
+    image: {
+      url: "https://res.cloudinary.com/dzktdrw7o/image/upload/v1700617028/next-portfolio-app/screenshot/91f992e0-9560-41ad-a899-812104acf4d9_df1ooc.png",
+    },
     stack: [
       {
         name: "nextjs",
@@ -67,6 +75,9 @@ const DATASET = [
       },
     ],
     description: "하나의 페이지로 이루어진 프로젝트입니다.",
+    web: {
+      url: "",
+    },
   },
   {
     id: "Next App",
@@ -88,9 +99,8 @@ export default function Works() {
 
   return (
     <section id="works" className="works">
-      <div className="title">
-        <h1>Works</h1>
-      </div>
+      <h1 className="title">Works</h1>
+
       <div className="works-items" ref={itemsRef}>
         {DATASET.map((item: any, index: any) => (
           <motion.div
@@ -101,10 +111,16 @@ export default function Works() {
             // transition={{ duration: 2 }}
           >
             <div className="works-item-image-outer">
-              <Image src={item.url || "/images/town.jpg"} alt="alt" width={300} height={300} />
+              <Image
+                src={item?.image?.url || "/images/town.jpg"}
+                alt="alt"
+                width={300}
+                height={300}
+              />
             </div>
             <div className="works-item-content">
               <h3>{item.title}</h3>
+              <div className="icons">{item.stack.map((v: any) => v.icon)}</div>
             </div>
           </motion.div>
         ))}
@@ -129,16 +145,12 @@ export default function Works() {
                   <CgClose />
                 </button>
                 <Image
-                  src={selectedItem?.url || "/images/town.jpg"}
+                  src={selectedItem?.image?.url || "/images/town.jpg"}
                   alt="alt"
                   width={700}
                   height={700}
                 />
-                <Link
-                  href={"https://next-commerce-app-psi.vercel.app/"}
-                  target="_blank"
-                  className="go-to-website"
-                >
+                <Link href={selectedItem?.web?.url || ""} target="_blank" className="go-to-website">
                   Go to website
                 </Link>
               </div>

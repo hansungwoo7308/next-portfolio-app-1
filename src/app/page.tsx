@@ -1,7 +1,6 @@
 "use client";
-import "@/app/page.scss";
-// import Test from "@/components/Test";
 
+import "@/app/page.scss";
 import Hero from "@/components/Hero";
 import Performance from "@/components/Performance";
 import About from "@/components/About";
