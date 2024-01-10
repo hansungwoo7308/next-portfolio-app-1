@@ -36,11 +36,13 @@ export default function About() {
           <small>youserstack</small>
         </div>
         <div className="text">
-          <p>Hi. I&ldquo;m studying web front-end tech, looking for getting related jobs.</p>
           <p>
-            안녕하세요. 웹 프론트엔드 기술을 공부 중이며, 해당 직무를 구하는 기업을 모색 중에
-            있습니다.
+            {`
+              Hi. I'm a web frontend developer.
+              I prefer simple and clear design.
+            `}
           </p>
+          <p>안녕하세요. 웹 프론트엔드 개발자입니다. 저는 심플하고 명확한 디자인을 지향합니다.</p>
         </div>
       </motion.div>
       <motion.div {...options}>
@@ -64,12 +66,7 @@ export default function About() {
           <h1>Additional Information</h1>
         </div>
         <div className="text">
-          <p>Semantic HTML</p>
-          <p>Responsive Design</p>
-          <p>AJAX</p>
-          <p>Semantic HTML</p>
-          <p>Responsive Design</p>
-          <p>AJAX</p>
+          <p>Sejong University Computer Engineering</p>
         </div>
       </motion.div>
     </section>
