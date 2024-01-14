@@ -47,7 +47,7 @@ const DATASET = [
       "이커머스 프로젝트입니다. 로그인, 검색, 장바구니, 결제, 주문목록확인 기능이 있고,\n" +
       "관리자 권한으로 로그인하면 제품을 추가하거나 삭제하는 기능을 이용할 수 있습니다.\n",
     web: {
-      url: "https://next-commerce-app-psi.vercel.app/",
+      url: "https://youserstack-ecommerce-next-app.vercel.app/",
     },
   },
   {
@@ -76,7 +76,7 @@ const DATASET = [
     ],
     description: "하나의 페이지로 이루어진 프로젝트입니다.",
     web: {
-      url: "",
+      url: "https://youserstack-portfolio-next-app.vercel.app/",
     },
   },
   {
