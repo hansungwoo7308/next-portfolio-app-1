@@ -37,12 +37,9 @@ export default function About() {
         </div>
         <div className="text">
           <p>
-            {`
-              Hi. I'm a web frontend developer.
-              I prefer simple and clear design.
-            `}
+            안녕하세요. 한성우입니다. 웹 프런트엔드 개발자로서 새로운 도전을 하려는 개발자입니다.
           </p>
-          <p>안녕하세요. 웹 프론트엔드 개발자입니다. 저는 심플하고 명확한 디자인을 지향합니다.</p>
+          <p>Hi, I'm Han Seongwoo, a web frontend developer eager to take on new challenges.</p>
         </div>
       </motion.div>
       <motion.div {...options}>

@@ -97,6 +97,8 @@ export default function Works() {
     setSelectedItem(foundItem);
   }, [selectedId]);
 
+  console.log({ DATASET });
+
   return (
     <section id="works" className="works">
       <h1 className="title">Works</h1>
